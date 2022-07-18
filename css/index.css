@@ -1,0 +1,175 @@
+@font-face {
+  font-family: "OSeongandHanEum";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/OSeongandHanEum.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GongGothicLight";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicLight.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+header {
+  width: 100%;
+  height: 5vw;
+  position: relative;
+}
+
+#header_box {
+  width: 95%;
+  height: 4vw;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 1vw 0 1vw 0;
+  box-shadow: 0.15vw 0.15vw 0.5vw #5c5c5c;
+}
+#header_box img {
+  width: 11vw;
+}
+
+nav {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav ul li {
+  float: left;
+  margin: 2%;
+}
+nav ul li a {
+  font-family: "OSeongandHanEum";
+  font-size: 1vw;
+}
+
+#menu {
+  width: 42vw;
+}
+
+#my_menu {
+  width: 17.6vw;
+}
+
+#slider {
+  width: 100%;
+  height: 45vw;
+  display: flex;
+}
+#slider > div {
+  width: 33.3333333333%;
+  height: 100%;
+  position: relative;
+}
+
+.box {
+  width: 95%;
+  height: 95%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#new_book {
+  font-family: "OSeongandHanEum";
+}
+#new_book img {
+  width: 7.5vw;
+}
+#new_book h2 {
+  font-family: "GongGothicLight";
+  font-size: 2.5vw;
+  text-align: center;
+  font-weight: bold;
+  margin: 3% 0;
+}
+#new_book .box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 0.5vw solid #f5ac1b;
+}
+#new_book p {
+  font-size: 1vw;
+  text-align: center;
+  padding-bottom: 3%;
+}
+#new_book button {
+  background-color: #fff;
+  font-family: "OSeongandHanEum";
+  font-size: 1vw;
+  padding: 0.3vw 1vw;
+}
+
+#best_seller {
+  font-family: "OSeongandHanEum";
+}
+#best_seller img {
+  width: 7.5vw;
+}
+#best_seller h2 {
+  font-family: "GongGothicLight";
+  font-size: 2.5vw;
+  text-align: center;
+  font-weight: bold;
+  margin: 3% 0;
+}
+#best_seller .box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 0.5vw solid #4b6bb0;
+}
+#best_seller p {
+  font-size: 1vw;
+  text-align: center;
+  padding-bottom: 3%;
+}
+#best_seller button {
+  background-color: #fff;
+  font-family: "OSeongandHanEum";
+  font-size: 1vw;
+  padding: 0.3vw 1vw;
+}
+
+#recommendation {
+  font-family: "OSeongandHanEum";
+}
+#recommendation img {
+  width: 7.5vw;
+}
+#recommendation h2 {
+  font-family: "GongGothicLight";
+  font-size: 2.5vw;
+  text-align: center;
+  font-weight: bold;
+  margin: 3% 0;
+}
+#recommendation .box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 0.5vw solid #e7308a;
+}
+#recommendation p {
+  font-size: 1vw;
+  text-align: center;
+  padding-bottom: 3%;
+}
+#recommendation button {
+  background-color: #fff;
+  font-family: "OSeongandHanEum";
+  font-size: 1vw;
+  padding: 0.3vw 1vw;
+}

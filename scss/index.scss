@@ -1,0 +1,206 @@
+@font-face {
+    font-family: 'OSeongandHanEum';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/OSeongandHanEum.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+// 포천오성과한음체
+
+@font-face {
+    font-family: 'GongGothicLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+// 이사만루 Light
+
+
+
+//mixins
+@mixin titleFont {
+    font-family: 'GongGothicLight';
+    font-size: 2.5vw;
+    text-align: center;
+    font-weight: bold;
+    margin: 3% 0;
+}
+
+@mixin btnDesign {
+    background-color: #fff;
+    font-family: 'OSeongandHanEum';
+    font-size: 1vw;
+    padding: 0.3vw 1vw;
+}
+
+@mixin cloumnCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+//vaiables
+$yellow: #f5ac1b;
+$blue: #4b6bb0;
+$magenta: #e7308a;
+$mainFont: 'OSeongandHanEum';
+
+
+
+//header
+header{
+    width: 100%; height: 5vw;
+    position: relative;
+}
+
+#header_box{
+    width: 95%; height: 4vw;
+    position: absolute;
+    bottom: 0; left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 1vw 0 1vw 0;
+    box-shadow: 0.15vw 0.15vw 0.5vw #5c5c5c;
+
+    img{
+        width: 11vw;
+    }
+}
+
+
+
+nav{
+    width: 70%; height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    ul li{
+        float: left;
+        margin: 2%;
+    }
+    
+    ul li a{
+        font-family: $mainFont;
+        font-size: 1vw;
+    }
+}
+
+
+#menu{
+    width: 42vw; 
+}
+
+#my_menu{
+    width: 17.6vw;
+}
+
+
+//slider
+#slider{width: 100%; height: 45vw;
+        display: flex;
+    
+        > div{
+            width: calc(100% / 3);
+            height: 100%;
+            position: relative;
+        }
+
+    }
+
+
+
+.box{
+    width: 95%; height: 95%;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#new_book{
+    
+    font-family: $mainFont;
+
+    img{
+        width: 7.5vw;
+    }
+    
+    h2{
+        @include titleFont;
+    }
+
+    .box{
+        @include cloumnCenter;
+        border: 0.5vw solid $yellow;
+    }
+
+    p{
+        font-size: 1vw;
+        text-align: center;
+        padding-bottom: 3%;
+    }
+
+    button{
+        @include btnDesign;
+    }
+}
+
+#best_seller{
+    
+    font-family: $mainFont;
+
+    img{
+        width: 7.5vw;
+    }
+
+    h2{
+        @include titleFont;
+    }
+
+    .box{
+        @include cloumnCenter;
+        border: 0.5vw solid $blue;
+    }
+
+    p{
+        font-size: 1vw;
+        text-align: center;
+        padding-bottom: 3%;
+    }
+
+    button{
+        @include btnDesign;
+    }
+}
+
+#recommendation{
+   
+    font-family: $mainFont;
+
+    img{
+        width: 7.5vw;
+    }
+
+    h2{
+        @include titleFont;
+    }
+
+    .box{ 
+        @include cloumnCenter;
+        border: 0.5vw solid $magenta;
+    }
+
+    p{
+        font-size: 1vw;
+        text-align: center;
+        padding-bottom: 3%;
+    }
+
+    button{
+        @include btnDesign;
+    }
+}
