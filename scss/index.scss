@@ -21,6 +21,7 @@
     font-family: 'GongGothicLight';
     font-size: 2.5vw;
     text-align: center;
+    color: #fff;
     font-weight: bold;
     margin: 3% 0;
 }
@@ -28,8 +29,12 @@
 @mixin btnDesign {
     background-color: #fff;
     font-family: 'OSeongandHanEum';
-    font-size: 1vw;
-    padding: 0.3vw 1vw;
+    font-size: 1vw; 
+    color: #fff;
+    padding: 0.3vw 1.2vw;
+    border: 0.15vw solid #fff;
+    transition: 0.3s;
+    cursor: pointer;
 }
 
 @mixin cloumnCenter {
@@ -42,20 +47,23 @@
 
 //vaiables
 $yellow: #f5ac1b;
-$blue: #4b6bb0;
-$magenta: #e7308a;
+$blue: #728397;
+$pink: #da819f;
 $mainFont: 'OSeongandHanEum';
+$titleFont: 'GongGothicLight';
 
 
 
 //header
 header{
     width: 100%; height: 5vw;
-    position: relative;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: 1;
 }
 
 #header_box{
-    width: 95%; height: 4vw;
+    width: 88.5%; height: 4vw;
     position: absolute;
     bottom: 0; left: 50%;
     transform: translateX(-50%);
@@ -64,7 +72,7 @@ header{
     align-items: center;
     background-color: #fff;
     border-radius: 1vw 0 1vw 0;
-    box-shadow: 0.15vw 0.15vw 0.5vw #5c5c5c;
+    box-shadow: 0.15vw 0.15vw 0.5vw #858585;
 
     img{
         width: 11vw;
@@ -101,24 +109,24 @@ nav{
 
 
 //slider
-#slider{width: 100%; height: 45vw;
-        display: flex;
-    
-        > div{
-            width: calc(100% / 3);
-            height: 100%;
-            position: relative;
-        }
-
+#slider{
+        width: 100%; height: 48vw;
     }
 
+#slider_box{
+    width: 100%; height: 100%;
+    margin: 0 auto;
+    display: flex;
 
+    > div{
+        width: calc(100% / 3);
+        height: 100%;
+        position: relative;
+    }
+} 
 
 .box{
-    width: 95%; height: 95%;
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
+    width: 100%; height: 100%;
 }
 
 #new_book{
@@ -135,17 +143,23 @@ nav{
 
     .box{
         @include cloumnCenter;
-        border: 0.5vw solid $yellow;
+        background-color: $yellow;
     }
 
     p{
-        font-size: 1vw;
+        font-size: 1.1vw;
         text-align: center;
         padding-bottom: 3%;
+        color: #fff;
     }
 
     button{
         @include btnDesign;
+        background-color: $yellow;
+    }
+
+    button:hover{
+        border-radius: 0.8vw;
     }
 }
 
@@ -163,17 +177,23 @@ nav{
 
     .box{
         @include cloumnCenter;
-        border: 0.5vw solid $blue;
+        background-color: $blue;
     }
 
     p{
-        font-size: 1vw;
+        font-size: 1.1vw;
         text-align: center;
         padding-bottom: 3%;
+        color: #fff;
     }
 
     button{
         @include btnDesign;
+        background-color: $blue;
+    }
+
+    button:hover{
+        border-radius: 0.8vw;
     }
 }
 
@@ -191,16 +211,117 @@ nav{
 
     .box{ 
         @include cloumnCenter;
-        border: 0.5vw solid $magenta;
+        background-color: $pink;
     }
 
     p{
-        font-size: 1vw;
+        font-size: 1.1vw;
         text-align: center;
         padding-bottom: 3%;
+        color: #fff;
     }
 
     button{
         @include btnDesign;
+        background-color: $pink;
+    }
+
+    button:hover{
+        border-radius: 0.8vw;
+    }
+}
+
+
+
+//신간 소개
+#newBook{
+    width: 100%;
+    height: 50vw;
+}
+
+#newBook_box{
+    width: 90%; height: 45vw;
+    margin: 5vw auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    h2{
+        font-family: $titleFont;
+        font-size: 4vw;
+        text-align: center;
+    }
+
+    > div{
+        width: 100%; height: 38%;
+        position: relative;
+
+        > h3{
+            font-family: $mainFont;
+            font-size: 1.5vw;
+            text-align: center;
+            margin-bottom: 2%;
+        }
+
+    }
+    
+}
+
+.new{
+    width: 80.5%; height: 85%;
+    margin: 0 auto;
+}
+
+.book{
+    width: 15vw; height: 85%;
+    text-align: center;
+    float: left;
+    margin: 0 2%;
+    position: relative;
+
+    .background{
+        width: 80%; height: 60%;
+        background-color: #e6ded3;
+        border-radius: 6vw 6vw 0.5vw 0.5vw;
+        position: absolute;
+        bottom: 29.5%; left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+    }
+
+    img{
+        width: 6vw;
+    }
+
+    h3, p{
+        font-family: $mainFont;
+    }
+
+    h3{
+        font-size: 1.1vw;
+        margin-top: 1%;
+    }
+
+    p{
+        font-size: 0.8vw;
+        margin-top: 1%;
+    }
+
+    button{
+        position: absolute;
+        bottom: -5%; left: 50%;
+        transform: translateX(-50%);
+        font-family: $mainFont;
+        border: 0;
+        background-color: $yellow;
+        padding: 0.3vw 0.5vw;
+        color: #fff;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    button:hover{
+        border-radius: 0.8vw;
     }
 }
