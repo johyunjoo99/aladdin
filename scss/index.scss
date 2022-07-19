@@ -30,7 +30,9 @@
     background-color: #fff;
     font-family: 'OSeongandHanEum';
     font-size: 1vw; 
+    font-weight: bold;
     color: #fff;
+    background-color: #fff;
     padding: 0.3vw 1.2vw;
     border: 0.15vw solid #fff;
     transition: 0.3s;
@@ -63,7 +65,7 @@ header{
 }
 
 #header_box{
-    width: 88.5%; height: 4vw;
+    width: 90%; height: 4vw;
     position: absolute;
     bottom: 0; left: 50%;
     transform: translateX(-50%);
@@ -71,8 +73,7 @@ header{
     justify-content: space-around;
     align-items: center;
     background-color: #fff;
-    border-radius: 1vw 0 1vw 0;
-    box-shadow: 0.15vw 0.15vw 0.5vw #858585;
+    border-radius: 1vw;
 
     img{
         width: 11vw;
@@ -155,7 +156,7 @@ nav{
 
     button{
         @include btnDesign;
-        background-color: $yellow;
+        color: $yellow;
     }
 
     button:hover{
@@ -189,7 +190,7 @@ nav{
 
     button{
         @include btnDesign;
-        background-color: $blue;
+        color: $blue;
     }
 
     button:hover{
@@ -223,7 +224,7 @@ nav{
 
     button{
         @include btnDesign;
-        background-color: $pink;
+        color: $pink;
     }
 
     button:hover{
@@ -245,83 +246,181 @@ nav{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
 
     h2{
         font-family: $titleFont;
-        font-size: 4vw;
-        text-align: center;
+        font-size: 3vw;
     }
-
-    > div{
-        width: 100%; height: 38%;
-        position: relative;
-
-        > h3{
-            font-family: $mainFont;
-            font-size: 1.5vw;
-            text-align: center;
-            margin-bottom: 2%;
-        }
-
-    }
-    
 }
 
-.new{
-    width: 80.5%; height: 85%;
-    margin: 0 auto;
+.slide{
+    width: 100%; height: 40%;
+    position: relative;
+    overflow: hidden;
+
+    > h3{
+        font-family: $mainFont;
+        font-size: 1.2vw;
+    }
+
+    > button{
+        font-family: $mainFont;
+        font-size: 0.9vw;
+        font-weight: bold;
+        border: none;
+        background: none;
+        position: absolute;
+        bottom: 0; right: 0;
+        padding: 0.15vw 0.2vw;
+
+        .fa-arrow-right-long{
+            color: $yellow;
+        }   
+    }
+
+    > button:hover .fa-arrow-right-long{
+        animation: .3s alternate ease infinite bounceRight;
+    }
+}
+
+@keyframes bounceRight{
+    from{transform: translateX(20%);}
+    to{transform: translateX(0);}
+}
+
+.slide_img{
+    width: 122vw; height: 70%;
+    position: absolute;
+    top: 20%; left: 50%;
+    transform: translateX(-50%);
 }
 
 .book{
-    width: 15vw; height: 85%;
-    text-align: center;
+    width: 14vw; height: 10.5vw;
     float: left;
-    margin: 0 2%;
+    margin: 0 0.51%;
     position: relative;
+    text-align: center;
 
     .background{
-        width: 80%; height: 60%;
+        width: 75%; height: 65%;
         background-color: #e6ded3;
-        border-radius: 6vw 6vw 0.5vw 0.5vw;
         position: absolute;
-        bottom: 29.5%; left: 50%;
-        transform: translateX(-50%);
+        bottom: 30%; left: 50%;
         z-index: -1;
+        transform: translateX(-50%);
+        border-radius: 7vw 7vw 0.5vw 0.5vw;
     }
 
     img{
-        width: 6vw;
+        height: 7.3vw;
+        box-shadow: 0 -0.1vw 0.4vw #888;
     }
 
-    h3, p{
+    p, h3{
         font-family: $mainFont;
     }
 
     h3{
-        font-size: 1.1vw;
-        margin-top: 1%;
+        font-size: 1vw;
+        margin: 1% 0;
     }
 
     p{
         font-size: 0.8vw;
-        margin-top: 1%;
     }
 
     button{
+        width: 5.7vw; height: 1.25vw;
+        background-color: $yellow;
+        border-radius: 0.3vw;
         position: absolute;
-        bottom: -5%; left: 50%;
+        bottom: -12%; left: 50%;
         transform: translateX(-50%);
         font-family: $mainFont;
-        border: 0;
-        background-color: $yellow;
-        padding: 0.3vw 0.5vw;
+        font-size: 0.7vw;
         color: #fff;
-        cursor: pointer;
-        transition: all 0.3s ease;
+        border: none;
+    }
+}
+
+
+
+
+//베스트 셀러
+#bestSeller{
+    width: 100%; height: 50vw;
+}
+
+#bestSeller_box{
+    width: 90%; height: 100%;
+    margin: 0 auto;
+    position: relative;
+    border: 0.05vw solid green;
+
+    h2{
+        font-family: $titleFont;
+        font-size: 3vw;
     }
 
-    button:hover{
-        border-radius: 0.8vw;
+    select{
+        position: absolute;
+        top: 1.5%; right: 0;
+        width: 8vw; height: 2vw;
+        font-family: $mainFont;
+        font-size: 1vw;
+        text-align: center;
+        border: 0.1vw solid #201e1f;
+
+        option{
+            font-family: $mainFont;
+        }
+    }
+
+    select:focus{
+        outline: none;
+    }
+}
+
+.medal{
+    width: 100%; height: 53%;
+    border: 0.05vw solid purple;
+
+    .best{
+        width: 18%; height: 55%;
+        border: 0.05vw solid yellowgreen;
+        text-align: center;
+        float: left;
+        position: relative;
+        margin: 0 2%;
+
+        h3{
+            font-family: $mainFont;
+            font-size: 1.1vw;
+            margin: 3%;
+        }
+
+        p{
+            font-family: $mainFont;
+            font-size: 0.8vw;
+        }
+
+        button{
+            position: absolute;
+            bottom: 0; left: 50%;
+            transform: translateX(-50%);
+            font-family: $mainFont;
+            font-size: 0.7vw;
+            border: none;
+            background-color: $blue;
+            color: #fff;
+            padding: 0.3vw 0.4vw;
+            border-radius: 0.3vw;
+        }
+    }
+
+    .best:nth-of-type(2){
+        transform: scale(1.2);
+        margin-bottom: 5%;
     }
 }
