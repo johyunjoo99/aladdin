@@ -49,7 +49,7 @@
 
 //vaiables
 $yellow: #f5ac1b;
-$blue: #728397;
+$blue: #83aeaf;
 $pink: #da819f;
 $mainFont: 'OSeongandHanEum';
 $titleFont: 'GongGothicLight';
@@ -272,6 +272,7 @@ nav{
         position: absolute;
         bottom: 0; right: 0;
         padding: 0.15vw 0.2vw;
+        cursor: pointer;
 
         .fa-arrow-right-long{
             color: $yellow;
@@ -341,6 +342,7 @@ nav{
         font-size: 0.7vw;
         color: #fff;
         border: none;
+        cursor: pointer;
     }
 }
 
@@ -349,7 +351,7 @@ nav{
 
 //베스트 셀러
 #bestSeller{
-    width: 100%; height: 50vw;
+    width: 100%; height: 55vw;
 }
 
 #bestSeller_box{
@@ -382,45 +384,100 @@ nav{
     }
 }
 
+.bestContent{
+    width: 100%; height: 93%;
+    display: flex;
+}
+
 .medal{
-    width: 100%; height: 53%;
+    width: 60%; height: 100%;
     border: 0.05vw solid purple;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 
-    .best{
-        width: 18%; height: 55%;
-        border: 0.05vw solid yellowgreen;
-        text-align: center;
-        float: left;
-        position: relative;
-        margin: 0 2%;
+    .gauge_box{
+        width: 100%; height: 15vw;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
 
-        h3{
-            font-family: $mainFont;
-            font-size: 1.1vw;
-            margin: 3%;
+        &:first-child{
+
+        .gauage{
+            width: 80%; height: 35%;
+            background-image: linear-gradient(to right, $blue, rgba(131, 174, 175, 0.3) );
         }
 
-        p{
-            font-family: $mainFont;
-            font-size: 0.8vw;
         }
 
-        button{
-            position: absolute;
-            bottom: 0; left: 50%;
-            transform: translateX(-50%);
-            font-family: $mainFont;
-            font-size: 0.7vw;
-            border: none;
-            background-color: $blue;
-            color: #fff;
-            padding: 0.3vw 0.4vw;
-            border-radius: 0.3vw;
+        &:nth-child(2){
+
+            .gauage{
+                width: 50%; height: 35%;  
+                background-image: linear-gradient(to right, $blue, rgba(131, 174, 175, 0.3) );
+            }
+    
+        }
+
+        &:last-child{
+
+            .gauage{
+                width: 30%; height: 35%;
+                background-image: linear-gradient(to right, $blue, rgba(131, 174, 175, 0.3) );
+            }
+    
+            }
+
+
+        .best{
+            width: 14vw;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 1vw;
+            margin-left: -4vw;
+    
+            img:not(.podium){
+                width: 6vw;
+                box-shadow: 0 -0.1vw 0.4vw #888;
+            }
+    
+            h3{
+                font-family: $mainFont;
+                font-size: 1.1vw;
+                margin: 3% 0 1%;
+            }
+    
+            p{
+                font-family: $mainFont;
+                font-size: 0.8vw;
+                margin-bottom: 1%;
+            }
+    
+            button{
+                width: 6vw; 
+                font-family: $mainFont;
+                font-size: 0.7vw;
+                font-weight: bold;
+                background-color: $blue;
+                border: none;
+                color: #fff;
+                padding: 0.3vw 0.4vw;
+                border-radius: 0.3vw;
+            }
+    
         }
     }
 
-    .best:nth-of-type(2){
-        transform: scale(1.2);
-        margin-bottom: 5%;
-    }
+
+
+}
+
+.ranking{
+    width: 40%; height: 100%;
+    border: 0.05vw solid red;
 }

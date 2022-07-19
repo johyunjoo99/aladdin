@@ -145,7 +145,7 @@ nav ul li a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #728397;
+  background-color: #83aeaf;
 }
 #best_seller p {
   font-size: 1.1vw;
@@ -164,7 +164,7 @@ nav ul li a {
   border: 0.15vw solid #fff;
   transition: 0.3s;
   cursor: pointer;
-  color: #728397;
+  color: #83aeaf;
 }
 #best_seller button:hover {
   border-radius: 0.8vw;
@@ -252,6 +252,7 @@ nav ul li a {
   bottom: 0;
   right: 0;
   padding: 0.15vw 0.2vw;
+  cursor: pointer;
 }
 .slide > button .fa-arrow-right-long {
   color: #f5ac1b;
@@ -333,11 +334,12 @@ nav ul li a {
   font-size: 0.7vw;
   color: #fff;
   border: none;
+  cursor: pointer;
 }
 
 #bestSeller {
   width: 100%;
-  height: 50vw;
+  height: 55vw;
 }
 
 #bestSeller_box {
@@ -369,43 +371,81 @@ nav ul li a {
   outline: none;
 }
 
-.medal {
+.bestContent {
   width: 100%;
-  height: 53%;
+  height: 93%;
+  display: flex;
+}
+
+.medal {
+  width: 60%;
+  height: 100%;
   border: 0.05vw solid purple;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
-.medal .best {
-  width: 18%;
-  height: 55%;
-  border: 0.05vw solid yellowgreen;
+.medal .gauge_box {
+  width: 100%;
+  height: 15vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.medal .gauge_box:first-child .gauage {
+  width: 80%;
+  height: 35%;
+  background-image: linear-gradient(to right, #83aeaf, rgba(131, 174, 175, 0.3));
+}
+.medal .gauge_box:nth-child(2) .gauage {
+  width: 50%;
+  height: 35%;
+  background-image: linear-gradient(to right, #83aeaf, rgba(131, 174, 175, 0.3));
+}
+.medal .gauge_box:last-child .gauage {
+  width: 30%;
+  height: 35%;
+  background-image: linear-gradient(to right, #83aeaf, rgba(131, 174, 175, 0.3));
+}
+.medal .gauge_box .best {
+  width: 14vw;
   text-align: center;
-  float: left;
-  position: relative;
-  margin: 0 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1vw;
+  margin-left: -4vw;
 }
-.medal .best h3 {
+.medal .gauge_box .best img:not(.podium) {
+  width: 6vw;
+  box-shadow: 0 -0.1vw 0.4vw #888;
+}
+.medal .gauge_box .best h3 {
   font-family: "OSeongandHanEum";
   font-size: 1.1vw;
-  margin: 3%;
+  margin: 3% 0 1%;
 }
-.medal .best p {
+.medal .gauge_box .best p {
   font-family: "OSeongandHanEum";
   font-size: 0.8vw;
+  margin-bottom: 1%;
 }
-.medal .best button {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+.medal .gauge_box .best button {
+  width: 6vw;
   font-family: "OSeongandHanEum";
   font-size: 0.7vw;
+  font-weight: bold;
+  background-color: #83aeaf;
   border: none;
-  background-color: #728397;
   color: #fff;
   padding: 0.3vw 0.4vw;
   border-radius: 0.3vw;
 }
-.medal .best:nth-of-type(2) {
-  transform: scale(1.2);
-  margin-bottom: 5%;
+
+.ranking {
+  width: 40%;
+  height: 100%;
+  border: 0.05vw solid red;
 }
