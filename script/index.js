@@ -24,4 +24,3 @@ $(function(){
     setInterval(prev, 5000);
 
 });
-

@@ -111,7 +111,7 @@ nav{
 
 //slider
 #slider{
-        width: 100%; height: 48vw;
+        width: 100%; height: 50.5vw;
     }
 
 #slider_box{
@@ -351,7 +351,7 @@ nav{
 
 //베스트 셀러
 #bestSeller{
-    width: 100%; height: 55vw;
+    width: 100%; height: 105vw;
 }
 
 #bestSeller_box{
@@ -360,124 +360,155 @@ nav{
     position: relative;
     border: 0.05vw solid green;
 
-    h2{
+    > h2{
         font-family: $titleFont;
         font-size: 3vw;
     }
 
-    select{
-        position: absolute;
-        top: 1.5%; right: 0;
-        width: 8vw; height: 2vw;
-        font-family: $mainFont;
-        font-size: 1vw;
-        text-align: center;
-        border: 0.1vw solid #201e1f;
+    p{
+        padding: 1% 0;
 
-        option{
+        > span{
             font-family: $mainFont;
+            font-size: 1vw;
+            font-weight: bold;
+            margin: 1% 2% 1% 0;
+            padding: 0.1vw 0.3vw;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+        }
+    
+        > span:hover{
+            box-shadow: inset 10vw 0 0 0 $blue;
+            color: #fff;
         }
     }
 
-    select:focus{
-        outline: none;
-    }
 }
 
-.bestContent{
+#rankSlide{
     width: 100%; height: 93%;
-    display: flex;
+    border: 0.05vw solid salmon;
+    position: relative;
+    // overflow: hidden;
 }
 
-.medal{
-    width: 60%; height: 100%;
-    border: 0.05vw solid purple;
+#rank_list{
+    width: 120vw; height: 100%;
+    border: 0.05vw solid gray;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-
-    .gauge_box{
-        width: 100%; height: 15vw;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-
-        &:first-child{
-
-        .gauage{
-            width: 80%; height: 35%;
-            background-image: linear-gradient(to right, $blue, rgba(131, 174, 175, 0.3) );
-        }
-
-        }
-
-        &:nth-child(2){
-
-            .gauage{
-                width: 50%; height: 35%;  
-                background-image: linear-gradient(to right, $blue, rgba(131, 174, 175, 0.3) );
-            }
-    
-        }
-
-        &:last-child{
-
-            .gauage{
-                width: 30%; height: 35%;
-                background-image: linear-gradient(to right, $blue, rgba(131, 174, 175, 0.3) );
-            }
-    
-            }
-
-
-        .best{
-            width: 14vw;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border-radius: 1vw;
-            margin-left: -4vw;
-    
-            img:not(.podium){
-                width: 6vw;
-                box-shadow: 0 -0.1vw 0.4vw #888;
-            }
-    
-            h3{
-                font-family: $mainFont;
-                font-size: 1.1vw;
-                margin: 3% 0 1%;
-            }
-    
-            p{
-                font-family: $mainFont;
-                font-size: 0.8vw;
-                margin-bottom: 1%;
-            }
-    
-            button{
-                width: 6vw; 
-                font-family: $mainFont;
-                font-size: 0.7vw;
-                font-weight: bold;
-                background-color: $blue;
-                border: none;
-                color: #fff;
-                padding: 0.3vw 0.4vw;
-                border-radius: 0.3vw;
-            }
-    
-        }
-    }
-
-
-
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 18.6%;
 }
 
 .ranking{
-    width: 40%; height: 100%;
-    border: 0.05vw solid red;
+    width: 20vw; height: 82vw; 
+
+    > h3{
+        font-family: $mainFont;
+        font-size: 1.5vw;
+        text-align: center;
+        background-color: $blue;
+        padding: 3% 0;
+        color: #fff;
+    }
+
+    .no1{
+        width: 100%; height: 15vw;
+        text-align: center;
+        border-left: 0.05vw solid $blue;
+        border-right: 0.05vw solid $blue;
+
+
+        > img{
+            width: 6vw;
+            box-shadow: 0 -0.1vw 0.4vw #888;
+            margin-top: 8%;
+        }
+
+        > h3{
+            font-family: $mainFont;
+            font-size: 1vw;
+            margin: 2% 0;
+        }
+
+        > p{
+            font-family: $mainFont;
+            font-size: 0.8vw;
+        }
+    }
+}
+
+.rank{
+    width: 100%; height: 10vw;
+    margin-bottom: 3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $blue;
+
+    img{
+        height: 82%;
+        margin-left: 3.5%;
+        box-shadow: 0 -0.1vw 0.4vw #333;
+    }
+
+    .rankText{
+        width: 60%; height: 85%;
+        margin-right: 3.5%;
+        padding: 5%;
+        background-color: #fff;
+        position: relative;
+
+        > span{
+            display: inline-block;
+            font-family: $titleFont;
+            font-weight: bold;
+            font-size: 1.2vw;
+            color: #fff;
+            background-color: $blue;
+            padding: 0.1vw 0.3vw;
+            margin-bottom: 2%;
+        }
+
+        h3{
+            font-family: $mainFont;
+            font-size: 1vw;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        p{
+            font-family: $mainFont;
+            font-size: 0.8vw;
+        }
+
+        button{
+            font-family: $mainFont;
+            font-size: 0.7vw;
+            background: none;
+            border: none;
+            position: absolute;
+            bottom: 7%; right: 7%;
+            cursor: pointer;
+
+            .fa-arrow-right-long{
+                color: $blue;
+                font-size: 0.7vw;
+            }
+        }
+
+        button:hover i{
+            animation: .3s alternate ease infinite bounceRight;
+        }
+    }
+}
+
+.scale{
+    transform: scale(1.15);
 }

@@ -279,15 +279,20 @@ $.ajax({
 
 
 
+
+
+
 //베스트 셀러
+
+// 스테디셀러 순위
 $.ajax({
     method: "GET",
     url: "https://dapi.kakao.com/v3/search/book?target=title",
-    data: { query: "원펀맨" },
+    data: { query: "파친코 1" },
     headers: {Authorization: "KakaoAK b0addad5ec36f2b967b77b1293ed7c5b"}
 }).done(function(data){
 
-    $("#medal .best").eq(0).append(
+    $(".no1").eq(0).prepend(
         $("<img>").attr("src", data.documents[0].thumbnail),
         $("<h3>").text(data.documents[0].title),
         $("<p>").text(data.documents[0].authors + " / " + data.documents[0].publisher)
@@ -295,7 +300,161 @@ $.ajax({
     
 });
 
-//베스트 셀러
+$.ajax({
+    method: "GET",
+    url: "https://dapi.kakao.com/v3/search/book?target=title",
+    data: { query: "파친코 2" },
+    headers: {Authorization: "KakaoAK b0addad5ec36f2b967b77b1293ed7c5b"}
+}).done(function(data){
+
+    $(".ranking:first .rank").eq(0).prepend(
+        $("<img>").attr("src", data.documents[0].thumbnail)
+    );
+
+    $(".ranking:first .rankText").eq(0).prepend(
+        $("<span>").text(2),
+        $("<h3>").text(data.documents[0].title),
+        $("<p>").text(data.documents[0].authors),
+        $("<p>").text(data.documents[0].publisher)
+    );
+    
+});
+
+$.ajax({
+    method: "GET",
+    url: "https://dapi.kakao.com/v3/search/book?target=title",
+    data: { query: "해커스 토익 기출 보카 TOEIC VOCA" },
+    headers: {Authorization: "KakaoAK b0addad5ec36f2b967b77b1293ed7c5b"}
+}).done(function(data){
+
+    var str = data.documents[0].title;
+    var str2 = str.substring(0, 23);
+
+    $(".ranking:first .rank").eq(1).prepend(
+        $("<img>").attr("src", data.documents[0].thumbnail)
+    )
+
+    $(".ranking:first .rankText").eq(1).prepend(
+        $("<span>").text(3),
+        $("<h3>").text(str2),
+        $("<p>").text(data.documents[0].authors),
+        $("<p>").text(data.documents[0].publisher)
+    );
+    
+});
+
+$.ajax({
+    method: "GET",
+    url: "https://dapi.kakao.com/v3/search/book?target=title",
+    data: { query: "부자 아빠 가난한 아빠 1" },
+    headers: {Authorization: "KakaoAK b0addad5ec36f2b967b77b1293ed7c5b"}
+}).done(function(data){
+
+    var str = data.documents[0].title;
+    var str2 = str.substring(0, 14);
+
+    $(".ranking:first .rank").eq(2).prepend(
+        $("<img>").attr("src", data.documents[0].thumbnail)
+    )
+    
+    $(".ranking:first .rankText").eq(2).prepend(
+        $("<span>").text(4),
+        $("<h3>").text(str2),
+        $("<p>").text(data.documents[0].authors),
+        $("<p>").text(data.documents[0].publisher)
+    );
+
+});
+
+$.ajax({
+    method: "GET",
+    url: "https://dapi.kakao.com/v3/search/book?target=title",
+    data: { query: "돈, 뜨겁게 사랑하고 차갑게 다루어라" },
+    headers: {Authorization: "KakaoAK b0addad5ec36f2b967b77b1293ed7c5b"}
+}).done(function(data){
+
+    var str = data.documents[0].title;
+    var str2 = str.substring(0, 20);
+
+    $(".ranking:first .rank").eq(3).prepend(
+        $("<img>").attr("src", data.documents[0].thumbnail)
+    )
+
+    $(".ranking:first .rankText").eq(3).prepend(
+        $("<span>").text(5),
+        $("<h3>").text(str2),
+        $("<p>").text(data.documents[0].authors),
+        $("<p>").text(data.documents[0].publisher)
+    );
+    
+});
+
+$.ajax({
+    method: "GET",
+    url: "https://dapi.kakao.com/v3/search/book?target=title",
+    data: { query: "돈의 심리학" },
+    headers: {Authorization: "KakaoAK b0addad5ec36f2b967b77b1293ed7c5b"}
+}).done(function(data){
+
+    var str = data.documents[0].title;
+    var str2 = str.substring(0, 6);
+
+    $(".ranking:first .rank").eq(4).prepend(
+        $("<img>").attr("src", data.documents[0].thumbnail)
+    )
+
+    $(".ranking:first .rankText").eq(4).prepend(
+        $("<span>").text(6),
+        $("<h3>").text(str2),
+        $("<p>").text(data.documents[0].authors),
+        $("<p>").text(data.documents[0].publisher)
+    );
+    
+});
+
+$.ajax({
+    method: "GET",
+    url: "https://dapi.kakao.com/v3/search/book?target=title",
+    data: { query: "오은영의 화해" },
+    headers: {Authorization: "KakaoAK b0addad5ec36f2b967b77b1293ed7c5b"}
+}).done(function(data){
+
+    var str = data.documents[0].title;
+    var str2 = str.substring(0, 7);
+
+    $(".ranking:first .rank").eq(5).prepend(
+        $("<img>").attr("src", data.documents[0].thumbnail)
+    )
+
+    $(".ranking:first .rankText").eq(5).prepend(
+        $("<span>").text(7),
+        $("<h3>").text(str2),
+        $("<p>").text(data.documents[0].authors),
+        $("<p>").text(data.documents[0].publisher)
+    );
+
+});
+
+
+
+
+
+//지금 베스트
+$.ajax({
+    method: "GET",
+    url: "https://dapi.kakao.com/v3/search/book?target=title",
+    data: { query: "파친코 1" },
+    headers: {Authorization: "KakaoAK b0addad5ec36f2b967b77b1293ed7c5b"}
+}).done(function(data){
+
+    $(".no1").eq(1).prepend(
+        $("<img>").attr("src", data.documents[1].thumbnail),
+        $("<h3>").text(data.documents[1].title),
+        $("<p>").text(data.documents[1].authors + " / " + data.documents[1].publisher)
+    )
+    
+});
+
 $.ajax({
     method: "GET",
     url: "https://dapi.kakao.com/v3/search/book?target=title",
@@ -303,12 +462,17 @@ $.ajax({
     headers: {Authorization: "KakaoAK b0addad5ec36f2b967b77b1293ed7c5b"}
 }).done(function(data){
 
-    $(".medal:first .best").eq(0).prepend(
-        $("<img>").attr("src", data.documents[0].thumbnail),
-        $("<h3>").text(data.documents[0].title),
-        $("<p>").text(data.documents[0].authors + " / " + data.documents[0].publisher)
+    $(".ranking:nth-of-type(2) .rank").eq(0).prepend(
+        $("<img>").attr("src", data.documents[0].thumbnail)
     )
     
+    $(".ranking:nth-of-type(2) .rankText").eq(0).prepend(
+        $("<span>").text(2),
+        $("<h3>").text(data.documents[0].title),
+        $("<p>").text(data.documents[0].authors),
+        $("<p>").text(data.documents[0].publisher)
+    );
+
 });
 
 $.ajax({
@@ -317,16 +481,21 @@ $.ajax({
     data: { query: "믿음에 대하여" },
     headers: {Authorization: "KakaoAK b0addad5ec36f2b967b77b1293ed7c5b"}
 }).done(function(data){
-    
+
     var str = data.documents[0].title;
     var str2 = str.substring(0, 7);
 
-    $(".medal:first .best").eq(1).prepend(
-        $("<img>").attr("src", data.documents[0].thumbnail),
-        $("<h3>").text(str2),
-        $("<p>").text(data.documents[0].authors + " / " + data.documents[0].publisher)
+    $(".ranking:nth-of-type(2) .rank").eq(1).prepend(
+        $("<img>").attr("src", data.documents[0].thumbnail)
     )
     
+    $(".ranking:nth-of-type(2) .rankText").eq(1).prepend(
+        $("<span>").text(3),
+        $("<h3>").text(str2),
+        $("<p>").text(data.documents[0].authors),
+        $("<p>").text(data.documents[0].publisher)
+    );
+
 });
 
 $.ajax({
@@ -336,7 +505,98 @@ $.ajax({
     headers: {Authorization: "KakaoAK b0addad5ec36f2b967b77b1293ed7c5b"}
 }).done(function(data){
 
-    $(".medal:first .best").eq(2).prepend(
+    $(".ranking:nth-of-type(2) .rank").eq(2).prepend(
+        $("<img>").attr("src", data.documents[1].thumbnail)
+    )
+
+    $(".ranking:nth-of-type(2) .rankText").eq(2).prepend(
+        $("<span>").text(4),
+        $("<h3>").text(data.documents[1].title),
+        $("<p>").text(data.documents[1].authors),
+        $("<p>").text(data.documents[1].publisher)
+    );
+    
+});
+
+$.ajax({
+    method: "GET",
+    url: "https://dapi.kakao.com/v3/search/book?target=title",
+    data: { query: "뿌미맘 가계부" },
+    headers: {Authorization: "KakaoAK b0addad5ec36f2b967b77b1293ed7c5b"}
+}).done(function(data){
+
+    var str = data.documents[0].title;
+    var str2 = str.substring(0, 7);
+
+    $(".ranking:nth-of-type(2) .rank").eq(3).prepend(
+        $("<img>").attr("src", data.documents[0].thumbnail)
+    )
+
+    $(".ranking:nth-of-type(2) .rankText").eq(3).prepend(
+        $("<span>").text(5),
+        $("<h3>").text(str2),
+        $("<p>").text(data.documents[0].authors),
+        $("<p>").text(data.documents[0].publisher)
+    );
+    
+});
+
+$.ajax({
+    method: "GET",
+    url: "https://dapi.kakao.com/v3/search/book?target=title",
+    data: { query: "불편한 편의점" },
+    headers: {Authorization: "KakaoAK b0addad5ec36f2b967b77b1293ed7c5b"}
+}).done(function(data){
+
+    var str = data.documents[0].title;
+    var str2 = str.substring(0, 7);
+
+    $(".ranking:nth-of-type(2) .rank").eq(4).prepend(
+        $("<img>").attr("src", data.documents[0].thumbnail)
+    );
+
+    $(".ranking:nth-of-type(2) .rankText").eq(4).prepend(
+        $("<span>").text(6),
+        $("<h3>").text(str2),
+        $("<p>").text(data.documents[0].authors),
+        $("<p>").text(data.documents[0].publisher)
+    );
+    
+});
+
+$.ajax({
+    method: "GET",
+    url: "https://dapi.kakao.com/v3/search/book?target=title",
+    data: { query: "매일 헤엄치는 법" },
+    headers: {Authorization: "KakaoAK b0addad5ec36f2b967b77b1293ed7c5b"}
+}).done(function(data){
+
+    $(".ranking:nth-of-type(2) .rank").eq(5).prepend(
+        $("<img>").attr("src", data.documents[0].thumbnail)
+    )
+    
+    $(".ranking:nth-of-type(2) .rankText").eq(5).prepend(
+        $("<span>").text(7),
+        $("<h3>").text(data.documents[0].title),
+        $("<p>").text(data.documents[0].authors),
+        $("<p>").text(data.documents[0].publisher)
+    );
+
+});
+
+
+
+
+
+//주간 베스트
+$.ajax({
+    method: "GET",
+    url: "https://dapi.kakao.com/v3/search/book?target=title",
+    data: { query: "파친코 1" },
+    headers: {Authorization: "KakaoAK b0addad5ec36f2b967b77b1293ed7c5b"}
+}).done(function(data){
+
+    $(".no1").eq(2).prepend(
         $("<img>").attr("src", data.documents[1].thumbnail),
         $("<h3>").text(data.documents[1].title),
         $("<p>").text(data.documents[1].authors + " / " + data.documents[1].publisher)
@@ -354,11 +614,102 @@ $.ajax({
     var str = data.documents[0].title;
     var str2 = str.substring(0, 8);
 
-    $(".ranking:first .rank").eq(0).prepend(
-        $("<img>").attr("src", data.documents[0].thumbnail),
-        $("<h3>").text(str2),
-        $("<p>").text(data.documents[0].authors + " / " + data.documents[0].publisher)
+    $(".ranking:nth-of-type(3) .rank").eq(0).prepend(
+        $("<img>").attr("src", data.documents[0].thumbnail)
     )
+
+    $(".ranking:nth-of-type(3) .rankText").eq(0).prepend(
+        $("<span>").text(2),
+        $("<h3>").text(str2),
+        $("<p>").text(data.documents[0].authors),
+        $("<p>").text(data.documents[0].publisher)
+    );
+    
+});
+
+$.ajax({
+    method: "GET",
+    url: "https://dapi.kakao.com/v3/search/book?target=title",
+    data: { query: "역행자" },
+    headers: {Authorization: "KakaoAK b0addad5ec36f2b967b77b1293ed7c5b"}
+}).done(function(data){
+
+    $(".ranking:nth-of-type(3) .rank").eq(1).prepend(
+        $("<img>").attr("src", data.documents[0].thumbnail)
+    )
+
+    $(".ranking:nth-of-type(3) .rankText").eq(1).prepend(
+        $("<span>").text(3),
+        $("<h3>").text(data.documents[0].title),
+        $("<p>").text(data.documents[0].authors),
+        $("<p>").text(data.documents[0].publisher)
+    );
+    
+});
+
+$.ajax({
+    method: "GET",
+    url: "https://dapi.kakao.com/v3/search/book?target=title",
+    data: { query: "믿음에 대하여" },
+    headers: {Authorization: "KakaoAK b0addad5ec36f2b967b77b1293ed7c5b"}
+}).done(function(data){
+
+    var str = data.documents[0].title;
+    var str2 = str.substring(0, 7);
+
+    $(".ranking:nth-of-type(3) .rank").eq(2).prepend(
+        $("<img>").attr("src", data.documents[0].thumbnail)
+    )
+
+    $(".ranking:nth-of-type(3) .rankText").eq(2).prepend(
+        $("<span>").text(4),
+        $("<h3>").text(str2),
+        $("<p>").text(data.documents[0].authors),
+        $("<p>").text(data.documents[0].publisher)
+    );
+    
+});
+
+$.ajax({
+    method: "GET",
+    url: "https://dapi.kakao.com/v3/search/book?target=title",
+    data: { query: "계속 가보겠습니다" },
+    headers: {Authorization: "KakaoAK b0addad5ec36f2b967b77b1293ed7c5b"}
+}).done(function(data){
+
+    $(".ranking:nth-of-type(3) .rank").eq(3).prepend(
+        $("<img>").attr("src", data.documents[0].thumbnail)
+    )
+
+    $(".ranking:nth-of-type(3) .rankText").eq(3).prepend(
+        $("<span>").text(5),
+        $("<h3>").text(data.documents[0].title),
+        $("<p>").text(data.documents[0].authors),
+        $("<p>").text(data.documents[0].publisher)
+    );
+    
+});
+
+$.ajax({
+    method: "GET",
+    url: "https://dapi.kakao.com/v3/search/book?target=title",
+    data: { query: "마법천자문" },
+    headers: {Authorization: "KakaoAK b0addad5ec36f2b967b77b1293ed7c5b"}
+}).done(function(data){
+
+    var str = data.documents[0].title;
+    var str2 = str.substring(0, 8);
+
+    $(".ranking:nth-of-type(3) .rank").eq(4).prepend(
+        $("<img>").attr("src", data.documents[0].thumbnail)
+    )
+
+    $(".ranking:nth-of-type(3) .rankText").eq(4).prepend(
+        $("<span>").text(6),
+        $("<h3>").text(str2),
+        $("<p>").text(data.documents[0].authors),
+        $("<p>").text(data.documents[0].publisher)
+    );
     
 });
 
@@ -372,25 +723,35 @@ $.ajax({
     var str = data.documents[0].title;
     var str2 = str.substring(0, 7);
 
-    $(".ranking:first .rank").eq(1).prepend(
-        $("<img>").attr("src", data.documents[0].thumbnail),
-        $("<h3>").text(str2),
-        $("<p>").text(data.documents[0].authors + " / " + data.documents[0].publisher)
+    $(".ranking:nth-of-type(3) .rank").eq(5).prepend(
+        $("<img>").attr("src", data.documents[0].thumbnail)
     )
+
+    $(".ranking:nth-of-type(3) .rankText").eq(5).prepend(
+        $("<span>").text(7),
+        $("<h3>").text(str2),
+        $("<p>").text(data.documents[0].authors),
+        $("<p>").text(data.documents[0].publisher)
+    );
     
 });
 
+
+
+
+
+//신간 베스트
 $.ajax({
     method: "GET",
     url: "https://dapi.kakao.com/v3/search/book?target=title",
-    data: { query: "더블유 b형 2022" },
+    data: { query: "믿음에 대하여" },
     headers: {Authorization: "KakaoAK b0addad5ec36f2b967b77b1293ed7c5b"}
 }).done(function(data){
 
     var str = data.documents[0].title;
-    var str2 = str.substring(0, 14);
+    var str2 = str.substring(0, 7);
 
-    $(".ranking:first .rank").eq(2).prepend(
+    $(".no1").eq(3).prepend(
         $("<img>").attr("src", data.documents[0].thumbnail),
         $("<h3>").text(str2),
         $("<p>").text(data.documents[0].authors + " / " + data.documents[0].publisher)
@@ -401,14 +762,122 @@ $.ajax({
 $.ajax({
     method: "GET",
     url: "https://dapi.kakao.com/v3/search/book?target=title",
-    data: { query: "작별인사" },
+    data: { query: "계속 가보겠습니다" },
     headers: {Authorization: "KakaoAK b0addad5ec36f2b967b77b1293ed7c5b"}
 }).done(function(data){
 
-    $(".ranking:first .rank").eq(3).prepend(
-        $("<img>").attr("src", data.documents[0].thumbnail),
-        $("<h3>").text(data.documents[0].title),
-        $("<p>").text(data.documents[0].authors + " / " + data.documents[0].publisher)
+    $(".ranking:last .rank").eq(0).prepend(
+        $("<img>").attr("src", data.documents[0].thumbnail)
     )
+
+    $(".ranking:last .rankText").eq(0).prepend(
+        $("<span>").text(2),
+        $("<h3>").text(data.documents[0].title),
+        $("<p>").text(data.documents[0].authors),
+        $("<p>").text(data.documents[0].publisher)
+    );
+    
+});
+
+$.ajax({
+    method: "GET",
+    url: "https://dapi.kakao.com/v3/search/book?target=title",
+    data: { query: "뿌미맘 가계부" },
+    headers: {Authorization: "KakaoAK b0addad5ec36f2b967b77b1293ed7c5b"}
+}).done(function(data){
+
+    var str = data.documents[0].title;
+    var str2 = str.substring(0, 7);
+
+    $(".ranking:last .rank").eq(1).prepend(
+        $("<img>").attr("src", data.documents[0].thumbnail)
+    )
+
+    $(".ranking:last .rankText").eq(1).prepend(
+        $("<span>").text(3),
+        $("<h3>").text(str2),
+        $("<p>").text(data.documents[0].authors),
+        $("<p>").text(data.documents[0].publisher)
+    );
+    
+});
+
+$.ajax({
+    method: "GET",
+    url: "https://dapi.kakao.com/v3/search/book?target=title",
+    data: { query: "원펀맨" },
+    headers: {Authorization: "KakaoAK b0addad5ec36f2b967b77b1293ed7c5b"}
+}).done(function(data){
+
+    $(".ranking:last .rank").eq(2).prepend(
+        $("<img>").attr("src", data.documents[0].thumbnail)
+    )
+
+    $(".ranking:last .rankText").eq(2).prepend(
+        $("<span>").text(4),
+        $("<h3>").text(data.documents[0].title),
+        $("<p>").text(data.documents[0].authors),
+        $("<p>").text(data.documents[0].publisher)
+    );
+    
+});
+
+$.ajax({
+    method: "GET",
+    url: "https://dapi.kakao.com/v3/search/book?target=title",
+    data: { query: "주문은 토끼입니까?" },
+    headers: {Authorization: "KakaoAK b0addad5ec36f2b967b77b1293ed7c5b"}
+}).done(function(data){
+
+    $(".ranking:last .rank").eq(3).prepend(
+        $("<img>").attr("src", data.documents[0].thumbnail)
+    )
+
+    $(".ranking:last .rankText").eq(3).prepend(
+        $("<span>").text(5),
+        $("<h3>").text(data.documents[0].title),
+        $("<p>").text(data.documents[0].authors),
+        $("<p>").text(data.documents[0].publisher)
+    );
+    
+});
+
+$.ajax({
+    method: "GET",
+    url: "https://dapi.kakao.com/v3/search/book?target=title",
+    data: { query: "튜브" },
+    headers: {Authorization: "KakaoAK b0addad5ec36f2b967b77b1293ed7c5b"}
+}).done(function(data){
+
+    $(".ranking:last .rank").eq(4).prepend(
+        $("<img>").attr("src", data.documents[0].thumbnail)
+    )
+
+    $(".ranking:last .rankText").eq(4).prepend(
+        $("<span>").text(6),
+        $("<h3>").text(data.documents[0].title),
+        $("<p>").text(data.documents[0].authors),
+        $("<p>").text(data.documents[0].publisher)
+    );
+    
+});
+
+$.ajax({
+    method: "GET",
+    url: "https://dapi.kakao.com/v3/search/book?target=title",
+    data: { query: "사이다의 핸드메이드 드레스 레슨" },
+    headers: {Authorization: "KakaoAK b0addad5ec36f2b967b77b1293ed7c5b"}
+}).done(function(data){
+
+    $(".ranking:last .rank").eq(5).prepend(
+        $("<img>").attr("src", data.documents[0].thumbnail)
+    )
+
+    $(".ranking:last .rankText").eq(5).prepend(
+        $("<span>").text(7),
+        $("<h3>").text(data.documents[0].title),
+        $("<p>").text(data.documents[0].authors),
+        $("<p>").text(data.documents[0].publisher)
+    );
     
 });
