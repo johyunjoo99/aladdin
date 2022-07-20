@@ -32,7 +32,7 @@
     font-size: 1vw; 
     font-weight: bold;
     color: #fff;
-    background-color: #fff;
+    background: none;
     padding: 0.3vw 1.2vw;
     border: 0.15vw solid #fff;
     transition: 0.3s;
@@ -49,8 +49,8 @@
 
 //vaiables
 $yellow: #f5ac1b;
-$blue: #83aeaf;
-$pink: #da819f;
+$blue: #728397;
+$pink: #fda4ba;
 $mainFont: 'OSeongandHanEum';
 $titleFont: 'GongGothicLight';
 
@@ -62,6 +62,7 @@ header{
     position: absolute;
     top: 0; left: 0;
     z-index: 1;
+    display: none;
 }
 
 #header_box{
@@ -88,14 +89,39 @@ nav{
     justify-content: space-between;
     align-items: center;
 
+    ul{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
     ul li{
-        float: left;
         margin: 2%;
     }
     
     ul li a{
         font-family: $mainFont;
-        font-size: 1vw;
+        font-size: 0.9vw;
+        font-weight: bold;
+        padding: 0.3vw 0.1vw;
+        background: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 1),
+            rgba(255, 255, 255, 1)
+        ), linear-gradient(
+            to right,
+            rgba(245, 172, 27, 1),
+            rgba(114, 131, 151, 1),
+            rgba(253, 164, 186, 1)
+        );
+        background-size: 100% 0.1vw, 0 0.1vw;
+        background-position: 100% 100%, 0 100%;
+        background-repeat: no-repeat;
+        transition: background-size 200ms;
+    }
+
+    a:hover{
+        background-size: 0% 0.1vw, 100% 0.1vw;
     }
 }
 
@@ -105,7 +131,7 @@ nav{
 }
 
 #my_menu{
-    width: 17.6vw;
+    width: 17.5vw;
 }
 
 
@@ -134,6 +160,7 @@ nav{
     
     font-family: $mainFont;
 
+
     img{
         width: 7.5vw;
     }
@@ -143,6 +170,8 @@ nav{
     }
 
     .box{
+        background: url("../img/index_img/newbook_back.png");
+        background-size: 100% 100%; 
         @include cloumnCenter;
         background-color: $yellow;
     }
@@ -156,11 +185,11 @@ nav{
 
     button{
         @include btnDesign;
-        color: $yellow;
     }
 
     button:hover{
-        border-radius: 0.8vw;
+        box-shadow: inset 10vw 0 0 0 #fff;
+        color: $yellow;
     }
 }
 
@@ -177,6 +206,8 @@ nav{
     }
 
     .box{
+        background: url("../img/index_img/best_seller_back.png");
+        background-size: 100% 100%; 
         @include cloumnCenter;
         background-color: $blue;
     }
@@ -190,11 +221,11 @@ nav{
 
     button{
         @include btnDesign;
-        color: $blue;
     }
 
     button:hover{
-        border-radius: 0.8vw;
+        box-shadow: inset 10vw 0 0 0 #fff;
+        color: $blue;
     }
 }
 
@@ -211,6 +242,8 @@ nav{
     }
 
     .box{ 
+        background: url("../img/index_img/recommendation_back.png");
+        background-size: 100% 100%; 
         @include cloumnCenter;
         background-color: $pink;
     }
@@ -224,11 +257,11 @@ nav{
 
     button{
         @include btnDesign;
-        color: $pink;
     }
 
     button:hover{
-        border-radius: 0.8vw;
+        box-shadow: inset 10vw 0 0 0 #fff;
+        color: $pink;
     }
 }
 
@@ -351,14 +384,13 @@ nav{
 
 //베스트 셀러
 #bestSeller{
-    width: 100%; height: 105vw;
+    width: 100%; height: 97vw;
 }
 
 #bestSeller_box{
     width: 90%; height: 100%;
     margin: 0 auto;
     position: relative;
-    border: 0.05vw solid green;
 
     > h2{
         font-family: $titleFont;
@@ -370,7 +402,7 @@ nav{
 
         > span{
             font-family: $mainFont;
-            font-size: 1vw;
+            font-size: 1.3vw;
             font-weight: bold;
             margin: 1% 2% 1% 0;
             padding: 0.1vw 0.3vw;
@@ -386,23 +418,11 @@ nav{
 
 }
 
-#rankSlide{
-    width: 100%; height: 93%;
-    border: 0.05vw solid salmon;
-    position: relative;
-    // overflow: hidden;
-}
-
 #rank_list{
-    width: 120vw; height: 100%;
-    border: 0.05vw solid gray;
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
+    width: 100%; height: 94%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 18.6%;
 }
 
 .ranking{
@@ -422,12 +442,20 @@ nav{
         text-align: center;
         border-left: 0.05vw solid $blue;
         border-right: 0.05vw solid $blue;
+        position: relative;
+        cursor: pointer;
 
 
-        > img{
+        > img:not(img[alt="no1"]){
             width: 6vw;
             box-shadow: 0 -0.1vw 0.4vw #888;
             margin-top: 8%;
+        }
+
+        img[alt="no1"]{
+            width: 4vw;
+            position: absolute;
+            top: 0; left: 24.5%;
         }
 
         > h3{
@@ -454,7 +482,7 @@ nav{
     img{
         height: 82%;
         margin-left: 3.5%;
-        box-shadow: 0 -0.1vw 0.4vw #333;
+        box-shadow: 0 0.1vw 0.4vw #111;
     }
 
     .rankText{
@@ -490,6 +518,7 @@ nav{
 
         button{
             font-family: $mainFont;
+            font-weight: bold;
             font-size: 0.7vw;
             background: none;
             border: none;
@@ -512,3 +541,150 @@ nav{
 .scale{
     transform: scale(1.15);
 }
+
+
+
+
+
+//추천 도서
+
+#recommend{
+    width: 100%; height: 40vw;
+}
+
+#recommend_box{
+    width: 90%; height: 100%;
+    margin: 0 auto;
+
+    > h2{
+        font-family: $titleFont;
+        font-size: 3vw;
+    }
+
+}
+
+#recommend_content{
+    width: 100%; height: 91.5%;
+    display: flex;
+    justify-content: space-between;
+
+    #recommend_menu{
+        width: 16%; height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        > span{
+            font-family: $mainFont;
+            font-size: 1.3vw;
+            font-weight: bold;
+            margin-bottom: 10%;
+            padding: 0.2vw 0.5vw;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+
+            &:first-of-type{
+                margin-top: 10%;
+            }
+        }
+
+        > span:hover{
+            box-shadow: inset 13vw 0 0 0 $pink;
+            color: #fff;
+        }
+    }
+}
+
+.bgColor{
+    background-color: $pink;
+    color: #fff;
+}
+
+#fade_box{
+    width: 85%; height: 100%;
+    position: relative;
+
+    .fadeBox{
+        width: 100%; height: 100%;
+        position: absolute;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        background-color: #fff;
+
+        &:not(:first-of-type){
+            display: none;
+        }
+    }
+
+    .content{
+        width: 14vw; height: 17vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 1%;
+        text-align: center;
+        background-color: $pink;
+        border-radius: 0.3vw;
+
+        img{
+            height: 7.5vw;
+            margin-bottom: 5%;
+            box-shadow: 0 0.1vw 0.4vw #111;
+        }
+    }
+
+    .contentText{
+        width: 87%; height: 40%;
+        padding: 0 5%;
+        background-color: #fff;
+        margin-top: 3%;
+        position: relative;
+        border-radius: 0.3vw;
+
+        h3{
+            width: 100%;
+            font-family: $mainFont;
+            font-size: 1vw;
+            margin: 8% 0 3%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        p{
+            font-family: $mainFont;
+            font-size: 0.8vw;
+            margin-bottom: 2%;
+        }
+
+        button{
+            position: absolute;
+            bottom: 7%; right: 5%;
+            font-family: $mainFont;
+            font-size: 0.7vw;
+            font-weight: bold;
+            background: none;
+            border: none;
+            cursor: pointer;
+
+            .fa-arrow-right-long{
+                color: $pink;
+                font-size: 0.7vw;
+            }
+        }
+
+        button:hover i{
+            animation: .3s alternate ease infinite bounceRight;
+        }
+    }
+}
+
+
+
+
+
+

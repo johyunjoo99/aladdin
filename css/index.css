@@ -17,6 +17,7 @@ header {
   top: 0;
   left: 0;
   z-index: 1;
+  display: none;
 }
 
 #header_box {
@@ -43,13 +44,27 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 nav ul li {
-  float: left;
   margin: 2%;
 }
 nav ul li a {
   font-family: "OSeongandHanEum";
-  font-size: 1vw;
+  font-size: 0.9vw;
+  font-weight: bold;
+  padding: 0.3vw 0.1vw;
+  background: linear-gradient(to right, rgb(255, 255, 255), rgb(255, 255, 255)), linear-gradient(to right, rgb(245, 172, 27), rgb(114, 131, 151), rgb(253, 164, 186));
+  background-size: 100% 0.1vw, 0 0.1vw;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 200ms;
+}
+nav a:hover {
+  background-size: 0% 0.1vw, 100% 0.1vw;
 }
 
 #menu {
@@ -57,7 +72,7 @@ nav ul li a {
 }
 
 #my_menu {
-  width: 17.6vw;
+  width: 17.5vw;
 }
 
 #slider {
@@ -97,6 +112,8 @@ nav ul li a {
   margin: 3% 0;
 }
 #new_book .box {
+  background: url("../img/index_img/newbook_back.png");
+  background-size: 100% 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -115,15 +132,15 @@ nav ul li a {
   font-size: 1vw;
   font-weight: bold;
   color: #fff;
-  background-color: #fff;
+  background: none;
   padding: 0.3vw 1.2vw;
   border: 0.15vw solid #fff;
   transition: 0.3s;
   cursor: pointer;
-  color: #f5ac1b;
 }
 #new_book button:hover {
-  border-radius: 0.8vw;
+  box-shadow: inset 10vw 0 0 0 #fff;
+  color: #f5ac1b;
 }
 
 #best_seller {
@@ -141,11 +158,13 @@ nav ul li a {
   margin: 3% 0;
 }
 #best_seller .box {
+  background: url("../img/index_img/best_seller_back.png");
+  background-size: 100% 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #83aeaf;
+  background-color: #728397;
 }
 #best_seller p {
   font-size: 1.1vw;
@@ -159,15 +178,15 @@ nav ul li a {
   font-size: 1vw;
   font-weight: bold;
   color: #fff;
-  background-color: #fff;
+  background: none;
   padding: 0.3vw 1.2vw;
   border: 0.15vw solid #fff;
   transition: 0.3s;
   cursor: pointer;
-  color: #83aeaf;
 }
 #best_seller button:hover {
-  border-radius: 0.8vw;
+  box-shadow: inset 10vw 0 0 0 #fff;
+  color: #728397;
 }
 
 #recommendation {
@@ -185,11 +204,13 @@ nav ul li a {
   margin: 3% 0;
 }
 #recommendation .box {
+  background: url("../img/index_img/recommendation_back.png");
+  background-size: 100% 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #da819f;
+  background-color: #fda4ba;
 }
 #recommendation p {
   font-size: 1.1vw;
@@ -203,15 +224,15 @@ nav ul li a {
   font-size: 1vw;
   font-weight: bold;
   color: #fff;
-  background-color: #fff;
+  background: none;
   padding: 0.3vw 1.2vw;
   border: 0.15vw solid #fff;
   transition: 0.3s;
   cursor: pointer;
-  color: #da819f;
 }
 #recommendation button:hover {
-  border-radius: 0.8vw;
+  box-shadow: inset 10vw 0 0 0 #fff;
+  color: #fda4ba;
 }
 
 #newBook {
@@ -339,7 +360,7 @@ nav ul li a {
 
 #bestSeller {
   width: 100%;
-  height: 105vw;
+  height: 97vw;
 }
 
 #bestSeller_box {
@@ -347,7 +368,6 @@ nav ul li a {
   height: 100%;
   margin: 0 auto;
   position: relative;
-  border: 0.05vw solid green;
 }
 #bestSeller_box > h2 {
   font-family: "GongGothicLight";
@@ -358,7 +378,7 @@ nav ul li a {
 }
 #bestSeller_box p > span {
   font-family: "OSeongandHanEum";
-  font-size: 1vw;
+  font-size: 1.3vw;
   font-weight: bold;
   margin: 1% 2% 1% 0;
   padding: 0.1vw 0.3vw;
@@ -366,29 +386,16 @@ nav ul li a {
   cursor: pointer;
 }
 #bestSeller_box p > span:hover {
-  box-shadow: inset 10vw 0 0 0 #83aeaf;
+  box-shadow: inset 10vw 0 0 0 #728397;
   color: #fff;
 }
 
-#rankSlide {
-  width: 100%;
-  height: 93%;
-  border: 0.05vw solid salmon;
-  position: relative;
-}
-
 #rank_list {
-  width: 120vw;
-  height: 100%;
-  border: 0.05vw solid gray;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 94%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: 18.6%;
 }
 
 .ranking {
@@ -399,7 +406,7 @@ nav ul li a {
   font-family: "OSeongandHanEum";
   font-size: 1.5vw;
   text-align: center;
-  background-color: #83aeaf;
+  background-color: #728397;
   padding: 3% 0;
   color: #fff;
 }
@@ -407,13 +414,21 @@ nav ul li a {
   width: 100%;
   height: 15vw;
   text-align: center;
-  border-left: 0.05vw solid #83aeaf;
-  border-right: 0.05vw solid #83aeaf;
+  border-left: 0.05vw solid #728397;
+  border-right: 0.05vw solid #728397;
+  position: relative;
+  cursor: pointer;
 }
-.ranking .no1 > img {
+.ranking .no1 > img:not(img[alt=no1]) {
   width: 6vw;
   box-shadow: 0 -0.1vw 0.4vw #888;
   margin-top: 8%;
+}
+.ranking .no1 img[alt=no1] {
+  width: 4vw;
+  position: absolute;
+  top: 0;
+  left: 24.5%;
 }
 .ranking .no1 > h3 {
   font-family: "OSeongandHanEum";
@@ -432,12 +447,12 @@ nav ul li a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #83aeaf;
+  background-color: #728397;
 }
 .rank img {
   height: 82%;
   margin-left: 3.5%;
-  box-shadow: 0 -0.1vw 0.4vw #333;
+  box-shadow: 0 0.1vw 0.4vw #111;
 }
 .rank .rankText {
   width: 60%;
@@ -453,7 +468,7 @@ nav ul li a {
   font-weight: bold;
   font-size: 1.2vw;
   color: #fff;
-  background-color: #83aeaf;
+  background-color: #728397;
   padding: 0.1vw 0.3vw;
   margin-bottom: 2%;
 }
@@ -470,6 +485,7 @@ nav ul li a {
 }
 .rank .rankText button {
   font-family: "OSeongandHanEum";
+  font-weight: bold;
   font-size: 0.7vw;
   background: none;
   border: none;
@@ -479,7 +495,7 @@ nav ul li a {
   cursor: pointer;
 }
 .rank .rankText button .fa-arrow-right-long {
-  color: #83aeaf;
+  color: #728397;
   font-size: 0.7vw;
 }
 .rank .rankText button:hover i {
@@ -489,4 +505,133 @@ nav ul li a {
 
 .scale {
   transform: scale(1.15);
+}
+
+#recommend {
+  width: 100%;
+  height: 40vw;
+}
+
+#recommend_box {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+}
+#recommend_box > h2 {
+  font-family: "GongGothicLight";
+  font-size: 3vw;
+}
+
+#recommend_content {
+  width: 100%;
+  height: 91.5%;
+  display: flex;
+  justify-content: space-between;
+}
+#recommend_content #recommend_menu {
+  width: 16%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+#recommend_content #recommend_menu > span {
+  font-family: "OSeongandHanEum";
+  font-size: 1.3vw;
+  font-weight: bold;
+  margin-bottom: 10%;
+  padding: 0.2vw 0.5vw;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+#recommend_content #recommend_menu > span:first-of-type {
+  margin-top: 10%;
+}
+#recommend_content #recommend_menu > span:hover {
+  box-shadow: inset 13vw 0 0 0 #fda4ba;
+  color: #fff;
+}
+
+.bgColor {
+  background-color: #fda4ba;
+  color: #fff;
+}
+
+#fade_box {
+  width: 85%;
+  height: 100%;
+  position: relative;
+}
+#fade_box .fadeBox {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #fff;
+}
+#fade_box .fadeBox:not(:first-of-type) {
+  display: none;
+}
+#fade_box .content {
+  width: 14vw;
+  height: 17vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 1%;
+  text-align: center;
+  background-color: #fda4ba;
+  border-radius: 0.3vw;
+}
+#fade_box .content img {
+  height: 7.5vw;
+  margin-bottom: 5%;
+  box-shadow: 0 0.1vw 0.4vw #111;
+}
+#fade_box .contentText {
+  width: 87%;
+  height: 40%;
+  padding: 0 5%;
+  background-color: #fff;
+  margin-top: 3%;
+  position: relative;
+  border-radius: 0.3vw;
+}
+#fade_box .contentText h3 {
+  width: 100%;
+  font-family: "OSeongandHanEum";
+  font-size: 1vw;
+  margin: 8% 0 3%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#fade_box .contentText p {
+  font-family: "OSeongandHanEum";
+  font-size: 0.8vw;
+  margin-bottom: 2%;
+}
+#fade_box .contentText button {
+  position: absolute;
+  bottom: 7%;
+  right: 5%;
+  font-family: "OSeongandHanEum";
+  font-size: 0.7vw;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+#fade_box .contentText button .fa-arrow-right-long {
+  color: #fda4ba;
+  font-size: 0.7vw;
+}
+#fade_box .contentText button:hover i {
+  -webkit-animation: 0.3s alternate ease infinite bounceRight;
+          animation: 0.3s alternate ease infinite bounceRight;
 }
