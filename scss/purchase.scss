@@ -23,5 +23,133 @@
 $yellow: #f5ac1b;
 $blue: #728397;
 $pink: #fda4ba;
+$fontColor: #201e1f;
 $mainFont: 'OSeongandHanEum';
 $titleFont: 'GongGothicLight';
+
+
+#slider{
+    width: 100%; height: 50vw;
+    position: relative;
+    
+    
+    #slider_box{
+        width: 90%; height: 85%;
+        position: absolute;
+        bottom: 0; left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        h4{
+            font-family: $titleFont;
+            text-align: center;
+            font-size: 1.2vw;
+            padding: 0.5vw 0; 
+            border-bottom: 0.15vw solid $fontColor;
+        }
+
+        > div{
+            width: 100%; height: 95%;
+            display: flex;
+        }
+    }
+}
+
+#book_img{
+    width: 40%; height: 100%;
+    position: relative;
+
+    > img{
+        width: 20vw;
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 0.8vw #333;
+    }
+}
+
+#book_info{
+    width: 60%; height: 100%;
+    border: 0.05vw solid salmon;
+    padding: 1vw 3vw;
+
+    h1{
+        font-family: $titleFont;
+        font-size: 3.5vw;
+    }
+
+    > p{
+        font-family: $mainFont;
+        font-size: 1.2vw;
+        font-weight: bold;
+        padding: 0.3vw 0;
+    }
+
+    #score{
+        width: 100%; height: 3.5vw;
+        margin-top: 0.3vw;        
+
+        p{
+            font-family: $mainFont;
+            font-size: 0.9vw;
+            font-weight: bold;
+            margin: 0.3vw 0;
+
+            span{
+                display: inline-block;
+                padding: 0.1vw 0.25vw;
+                border: 0.05vw solid $fontColor;
+                margin-left: 0.3vw;
+            }
+        }
+
+        img{
+            width: 1.2vw;
+        }
+
+        >span{
+            display: inline-block;
+            font-family: $mainFont;
+            font-size: 1.2vw;
+            font-weight: 800;
+        }
+
+        .hashtag{
+            display: inline-block;
+            font-size: 0.9vw;
+            color: #fff;
+            padding: 0.25vw 0.3vw;
+            border-radius: 0.5vw;
+            float: right;
+            margin-left: 0.3vw;
+        }
+
+        .hashtag:nth-of-type(2){
+            background-color: $pink;
+        }
+
+        .hashtag:last-of-type{
+            background-color: $blue;
+        }
+    }
+
+    #book_content{
+        width: 100%; height: 7vw;
+        padding: 1vw;
+
+        p{
+            font-family: $mainFont;
+            font-size: 0.9vw;
+            line-height: 1.2vw;
+        }
+    }
+
+    #book_price{
+        width: 100%; height: 10vw;
+        border: 0.05vw solid lightseagreen;
+    }
+}
+
+
