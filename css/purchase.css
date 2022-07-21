@@ -12,7 +12,7 @@
 }
 #slider {
   width: 100%;
-  height: 50vw;
+  height: 38vw;
   position: relative;
 }
 #slider #slider_box {
@@ -25,13 +25,17 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border-bottom: 0.15vw solid #201e1f;
 }
 #slider #slider_box h4 {
   font-family: "GongGothicLight";
-  text-align: center;
-  font-size: 1.2vw;
-  padding: 0.5vw 0;
+  font-weight: 300;
+  font-size: 1vw;
+  padding: 0.6vw 0;
   border-bottom: 0.15vw solid #201e1f;
+}
+#slider #slider_box h4 a:hover {
+  text-decoration: underline;
 }
 #slider #slider_box > div {
   width: 100%;
@@ -44,8 +48,17 @@
   height: 100%;
   position: relative;
 }
-#book_img > img {
-  width: 20vw;
+#book_img #book_imgbox {
+  width: 90%;
+  height: 90%;
+  border: 0.15vw solid #201e1f;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#book_img #book_imgbox > img {
+  width: 15vw;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -56,7 +69,6 @@
 #book_info {
   width: 60%;
   height: 100%;
-  border: 0.05vw solid salmon;
   padding: 1vw 3vw;
 }
 #book_info h1 {
@@ -68,6 +80,40 @@
   font-size: 1.2vw;
   font-weight: bold;
   padding: 0.3vw 0;
+}
+#book_info #book_price {
+  width: 100%;
+  height: 4.5vw;
+}
+#book_info #book_price p {
+  padding: 0.1vw 0;
+}
+#book_info #book_price span {
+  font-family: "OSeongandHanEum";
+  font-size: 1vw;
+}
+#book_info #book_price #cost {
+  padding-top: 1%;
+}
+#book_info #book_price #cost span {
+  color: #9e9e9e;
+  margin-right: 0.5vw;
+}
+#book_info #book_price #cost span:last-of-type {
+  text-decoration: line-through;
+}
+#book_info #book_price #sale span {
+  font-weight: bold;
+  font-size: 1.5vw;
+  margin-right: 1vw;
+}
+#book_info #book_price #sale span:last-of-type {
+  font-size: 0.8vw;
+  background-color: tomato;
+  color: #fff;
+  padding: 0.2vw 0.3vw;
+  margin-left: -0.5vw;
+  border-radius: 0.4vw;
 }
 #book_info #score {
   width: 100%;
@@ -85,6 +131,7 @@
   padding: 0.1vw 0.25vw;
   border: 0.05vw solid #201e1f;
   margin-left: 0.3vw;
+  cursor: pointer;
 }
 #book_info #score img {
   width: 1.2vw;
@@ -114,14 +161,168 @@
   width: 100%;
   height: 7vw;
   padding: 1vw;
+  margin-top: 0.5vw;
+  border-top: 0.05vw double #201e1f;
+  border-bottom: 0.05vw double #201e1f;
 }
 #book_info #book_content p {
   font-family: "OSeongandHanEum";
   font-size: 0.9vw;
   line-height: 1.2vw;
 }
-#book_info #book_price {
+#book_info form {
   width: 100%;
-  height: 10vw;
-  border: 0.05vw solid lightseagreen;
+  height: 25%;
+}
+#book_info #purchase_number {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#book_info #purchase_number label {
+  width: 50%;
+  height: 3.5vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#book_info #purchase_number button {
+  font-family: "OSeongandHanEum";
+  font-size: 1.3vw;
+  font-weight: bold;
+  padding: 0.2vw 0.6vw;
+  background-color: #201e1f;
+  color: #fff;
+  border-radius: 4vw;
+  cursor: pointer;
+}
+#book_info #purchase_number #minus {
+  margin-right: 1%;
+}
+#book_info #purchase_number #plus {
+  margin-left: 1%;
+}
+#book_info #purchase_number input {
+  width: 7vw;
+  height: 2vw;
+  padding: 0.2vw 0.5vw;
+  text-align: center;
+  font-family: "OSeongandHanEum";
+  font-weight: bold;
+  font-size: 1vw;
+  border: 0.2vw solid #201e1f;
+  border-radius: 0.4vw;
+}
+#book_info #purchase_number input:focus {
+  outline: none;
+}
+#book_info #purchase_number span {
+  font-family: "OSeongandHanEum";
+  font-size: 1.8vw;
+  font-weight: bold;
+}
+#book_info #btn_zip {
+  width: 100%;
+  height: 50%;
+}
+#book_info #btn_zip button, #book_info #btn_zip input {
+  font-family: "OSeongandHanEum";
+  font-size: 1.5vw;
+  font-weight: bold;
+  padding: 0.1vw 1.1vw;
+  background-color: #fff;
+  margin-top: 0.2vw;
+  border: 0.2vw solid #201e1f;
+  float: right;
+  transition: all 0.5s ease;
+}
+#book_info #btn_zip button:hover, #book_info #btn_zip input:hover {
+  color: #fff;
+  box-shadow: inset 20vw 0 0 0 #201e1f;
+}
+#book_info #btn_zip input {
+  margin-left: 2%;
+}
+
+#others {
+  width: 100%;
+  height: 18vw;
+}
+#others #others_box {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  border: 0.05vw solid red;
+}
+
+#others_slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0 1.5vw;
+  border: 0.05vw solid purple;
+}
+#others_slide h2 {
+  font-family: "GongGothicLight";
+  font-size: 2.5vw;
+}
+
+#product_slide {
+  width: 100%;
+  height: 75%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 0.05vw solid yellowgreen;
+}
+#product_slide i {
+  font-size: 3vw;
+  font-size: #201e1f;
+}
+#product_slide #product_list {
+  width: 85%;
+  height: 100%;
+  border: 0.05vw solid blue;
+}
+#product_slide #product_list #slide {
+  width: 100vw;
+  height: 100%;
+  border: 0.05vw solid orange;
+}
+#product_slide .product {
+  width: 10vw;
+  height: 100%;
+  border: 0.05vw solid salmon;
+  float: left;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#product_slide .product img {
+  width: 5vw;
+}
+#product_slide .product h3 {
+  font-family: "OSeongandHanEum";
+  font-size: 1vw;
+  margin: 3% 0;
+}
+#product_slide .product p {
+  font-family: "OSeongandHanEum";
+  font-size: 0.8vw;
+  margin-bottom: 2%;
+}
+#product_slide .product button {
+  font-family: "OSeongandHanEum";
+  font-size: 0.8vw;
+  border: none;
+  background-color: #201e1f;
+  color: #fff;
+  padding: 0.2vw 0.5vw;
+  border-radius: 0.4vw;
 }

@@ -49,12 +49,18 @@
     <!-- slider -->
     <div id="slider">
         <div id="slider_box">
-            <h4>국내 도서 &#62; 에세이</h4>
+            <h4><a href="#">국내 도서</a> &#62; <a href="#">에세이</a></h4>
             <div>
                 <div id="book_img">
-                <img src="img/index_img/book_cover.jpg" alt="매일을 헤엄치는 법"> 
+                    <div id="book_imgbox">
+                        <img src="img/index_img/book_cover.jpg" alt="매일을 헤엄치는 법">
+                    </div> 
                 </div>
                 <div id="book_info">
+                    <div id="book_price">
+                        <p id="cost"></p>
+                        <p id="sale"></p>
+                    </div>
                     <div id="score">
                         <p>에세이 주간 5위 | Sales Point: 40,970 <span><i class="fa-solid fa-chevron-down"></i></span></p>
                     
@@ -70,15 +76,54 @@
                         <span class="hashtag">&#35;베스트 셀러</span>
                     </div>
                     <div id="book_content"></div>
-                    <div id="book_price">
-                        <label for="cost">
-                            <input type="radio" name="price" id="cost">
-                        </label>
-                        <label for="sales">
-                            <input type="radio" name="price" id="sales">
-                        </label>
-                    </div>
+                    <form action="#">
+                        <div id="purchase_number">
+                            <label>
+                                <button id="minus">-</button>
+                                <input type="text" id="number" value="1">
+                                <button id="plus">+</button>
+                            </label>
+                        </div>
+                        <div id="btn_zip">
+                            <input type="submit" value="구매하기">
+                            <button>장바구니</button>
+                        </div>
+                    </form>
                 </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="others">
+        <div id="others_box">
+            <div id="others_slide">
+                <h2>다른 제품</h2>
+                <div id="product_slide">
+                    <i class="fa-solid fa-circle-chevron-left"></i>
+                    <div id="product_list">
+                        <div id="slide">
+                            <div class="product">
+                                <button>자세히 보러가기</button>
+                            </div>
+                            <div class="product">
+                                <button>자세히 보러가기</button>
+                            </div>
+                            <div class="product">
+                                <button>자세히 보러가기</button>
+                            </div>
+                            <div class="product">
+                                <button>자세히 보러가기</button>
+                            </div>
+                            <div class="product">
+                                <button>자세히 보러가기</button>
+                            </div>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-circle-chevron-right"></i>
+                </div>
+                
             </div>
         </div>
     </div>
