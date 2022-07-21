@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'OSeongandHanEum';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/OSeongandHanEum.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+// 포천오성과한음체
+
+@font-face {
+    font-family: 'GongGothicLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+// 이사만루 Light
+
+
+//mixins
+
+
+
+//vaiables
+$yellow: #f5ac1b;
+$blue: #728397;
+$pink: #fda4ba;
+$mainFont: 'OSeongandHanEum';
+$titleFont: 'GongGothicLight';

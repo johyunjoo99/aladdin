@@ -506,19 +506,19 @@ $.ajax({
 $.ajax({
     method: "GET",
     url: "https://dapi.kakao.com/v3/search/book?target=title",
-    data: { query: "파친코 1" },
+    data: { query: "모멸감, 끝낸다고 끝이 아닌 관계에 대하여" },
     headers: {Authorization: "KakaoAK b0addad5ec36f2b967b77b1293ed7c5b"}
 }).done(function(data){
 
     $(".ranking:nth-of-type(2) .rank").eq(2).prepend(
-        $("<img>").attr("src", data.documents[1].thumbnail)
+        $("<img>").attr("src", data.documents[0].thumbnail)
     )
 
     $(".ranking:nth-of-type(2) .rankText").eq(2).prepend(
         $("<span>").text(4),
-        $("<h3>").text(data.documents[1].title),
-        $("<p>").text(data.documents[1].authors),
-        $("<p>").text(data.documents[1].publisher)
+        $("<h3>").text(data.documents[0].title),
+        $("<p>").text(data.documents[0].authors),
+        $("<p>").text(data.documents[0].publisher)
     );
     
 });

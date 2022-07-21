@@ -1,3 +1,59 @@
+@font-face {
+    font-family: 'OSeongandHanEum';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/OSeongandHanEum.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+// 포천오성과한음체
+
+@font-face {
+    font-family: 'GongGothicLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+// 이사만루 Light
+
+
+//mixins
+@mixin titleFont {
+    font-family: 'GongGothicLight';
+    font-size: 2.5vw;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    margin: 3% 0;
+}
+
+@mixin btnDesign {
+    background-color: #fff;
+    font-family: 'OSeongandHanEum';
+    font-size: 1vw; 
+    font-weight: bold;
+    color: #fff;
+    background: none;
+    padding: 0.3vw 1.2vw;
+    border: 0.15vw solid #fff;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+@mixin cloumnCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+//vaiables
+$yellow: #f5ac1b;
+$blue: #728397;
+$pink: #fda4ba;
+$mainFont: 'OSeongandHanEum';
+$titleFont: 'GongGothicLight';
+
+
 *{
     margin: 0; padding: 0;
     box-sizing: border-box;
@@ -10,4 +66,211 @@ ul, ol, li{
 
 a{
     text-decoration: none;
+}
+
+
+
+
+//header
+header{
+    width: 100%; height: 5vw;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: 5;
+    display: none;
+}
+
+#header_box{
+    width: 90%; height: 4vw;
+    position: absolute;
+    bottom: 0; left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 1vw;
+
+    img{
+        width: 11vw;
+    }
+}
+
+
+
+nav{
+    width: 70%; height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    ul{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    ul li{
+        margin: 2%;
+    }
+    
+    ul li a{
+        font-family: $mainFont;
+        font-size: 0.9vw;
+        font-weight: bold;
+        padding: 0.3vw 0.1vw;
+        background: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 1),
+            rgba(255, 255, 255, 1)
+        ), linear-gradient(
+            to right,
+            rgba(245, 172, 27, 1),
+            rgba(114, 131, 151, 1),
+            rgba(253, 164, 186, 1)
+        );
+        background-size: 100% 0.2vw, 0 0.2vw;
+        background-position: 100% 100%, 0 100%;
+        background-repeat: no-repeat;
+        transition: background-size 200ms;
+    }
+
+    a:hover{
+        background-size: 0% 0.2vw, 100% 0.2vw;
+    }
+}
+
+
+#menu{
+    width: 42vw; 
+}
+
+#my_menu{
+    width: 17.5vw;
+}
+
+
+
+
+//footer
+footer{
+    width: 100%; height: 40vw;
+    background-color: #201e1f;
+    color: #fff;
+
+    #footer_box{
+        width: 90%; height: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    img{
+        width: 10vw;
+        margin-bottom: 5%;
+    }
+}
+
+#footer_content{
+    width: 100%; height: 55%;
+    display: flex;
+    border-bottom: 0.07vw solid #fff;
+
+    .footerList{
+        width: calc(100% / 3);
+        height: 100%;
+
+        h3{
+            color: #fff;
+            font-family: $titleFont;
+            font-size: 2vw;
+        }
+
+        ul{
+            width: 40%; height: 100%;
+        }
+    
+        ul li{
+            margin-top: 11%;
+        }
+    
+        ul li a{
+            color: #fff;
+            font-family: $mainFont;
+            font-weight: bold;
+            font-size: 1vw;
+        }
+
+        p{
+            font-family: $mainFont;
+            color: #fff;
+            font-size: 1vw;
+            font-weight: bold;
+            margin-top: 1%;
+
+            &:not(.contact){
+                margin-top: 5%;
+            }
+        }
+
+        .number{
+            font-size: 1.3vw;
+            margin-bottom: 4%;
+        }
+
+        span{
+            display: inline-block;
+            font-family: $mainFont;
+            font-size: 1vw;
+            color: #fff;
+            font-weight: bold;
+            margin: 5% 1.5% 0 0;
+        }
+
+        .media{
+            margin-top: 20%;
+        }
+
+        &:first-of-type{
+            width: 40%;
+        }
+
+        &:nth-of-type(2){
+            width: 70%;
+        }
+    }
+}
+
+#footer_menu{
+    width: 100%; height: 80%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#copyright{
+    width: 100%; height: 10%;
+
+    p{
+        color: #fff;
+        font-family: $mainFont;
+        font-size: 0.9vw;
+        margin-top: 0.6%;
+
+        a{
+            margin-left: 3%;
+        }
+
+        span{
+            font-family: $mainFont;
+            font-size: 0.9vw;
+            color: #fff;
+        }
+
+        span:hover{
+            text-decoration: underline;
+        }
+    }
 }
