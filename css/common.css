@@ -138,6 +138,9 @@ footer img {
   font-weight: bold;
   font-size: 1vw;
 }
+#footer_content .footerList ul li a:hover {
+  text-decoration: underline;
+}
 #footer_content .footerList p {
   font-family: "OSeongandHanEum";
   color: #fff;
