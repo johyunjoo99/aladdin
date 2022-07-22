@@ -66,4 +66,22 @@ $(function(){
 
 
 
+    //책 정보 메뉴 fade
+    $(".infoMenu").click(function(){
+
+        $(".infoMenu").removeClass("active");
+        $(this).addClass("active");
+
+        var menuIndex = $(this).index();
+
+        $(".bookInfo").eq(menuIndex).fadeIn().siblings().fadeOut("fast");
+
+        var boxHeight = $(".bookInfo").eq(menuIndex).height();
+
+        $("#bookInfo_box").css({height: boxHeight});
+
+    });
+
+
+
 })
