@@ -221,6 +221,7 @@
   font-weight: bold;
   padding: 0.2vw 0.6vw;
   background-color: #201e1f;
+  border: none;
   color: #fff;
   border-radius: 4vw;
   cursor: pointer;
@@ -414,8 +415,6 @@
 #bookInfo_box {
   width: 100%;
   height: 410vw;
-  border-left: 0.15vw solid #201e1f;
-  border-right: 0.15vw solid #201e1f;
   position: relative;
 }
 #bookInfo_box .bookInfo {
@@ -423,6 +422,9 @@
   height: auto;
   background-color: #fff;
   position: absolute;
+  border-left: 0.15vw solid #201e1f;
+  border-right: 0.15vw solid #201e1f;
+  border-bottom: 0.15vw solid #201e1f;
 }
 #bookInfo_box .bookInfo h3 {
   font-family: "GongGothicLight";
@@ -574,4 +576,328 @@
 #delivery table .decoNone {
   list-style: none;
   margin-top: 3%;
+}
+
+#distribution {
+  width: 100%;
+  height: 30vw;
+  background-color: #201e1f;
+  margin-top: 5%;
+}
+#distribution #distribution_box {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+}
+
+#purchaser {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#purchaser h3 {
+  font-family: "GongGothicLight";
+  text-align: center;
+  font-size: 2.5vw;
+  color: #fff;
+  margin-top: 0.5vw;
+}
+#purchaser #buyers {
+  width: 100%;
+  height: 85%;
+  display: flex;
+}
+#purchaser .female_age {
+  width: 45%;
+  height: 100%;
+}
+#purchaser .female_age .female {
+  width: 100%;
+  height: 16.6666666667%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+#purchaser .female_age .female span {
+  font-family: "OSeongandHanEum";
+  font-size: 0.8vw;
+  color: #fff;
+  margin-right: 0.8vw;
+}
+#purchaser .female_age .female .background {
+  width: 65%;
+  height: 35%;
+  background-color: #fff;
+  position: relative;
+}
+#purchaser .female_age .female .graph {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #fda4ba;
+  transform-origin: 100% 0;
+  transform: scaleX(0);
+  transition: all 0.5s ease-in-out;
+}
+#purchaser .female_age .female .fe10 {
+  width: 3.4%;
+}
+#purchaser .female_age .female .fe20 {
+  width: 33%;
+}
+#purchaser .female_age .female .fe30 {
+  width: 24.2%;
+}
+#purchaser .female_age .female .fe40 {
+  width: 14.6%;
+}
+#purchaser .female_age .female .fe50 {
+  width: 8.4%;
+}
+#purchaser .female_age .female .fe60 {
+  width: 0.5%;
+}
+#purchaser .age {
+  width: 10%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+#purchaser .age span {
+  font-family: "OSeongandHanEum";
+  font-size: 1.2vw;
+  color: #fff;
+}
+#purchaser .male_age {
+  width: 45%;
+  height: 100%;
+}
+#purchaser .male_age .male {
+  width: 100%;
+  height: 16.6666666667%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#purchaser .male_age .male span {
+  font-family: "OSeongandHanEum";
+  font-size: 0.8vw;
+  color: #fff;
+  margin-left: 0.8vw;
+}
+#purchaser .male_age .male .background {
+  width: 65%;
+  height: 35%;
+  background-color: #fff;
+  position: relative;
+}
+#purchaser .male_age .male .graph {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #728397;
+  transform-origin: 0 100%;
+  transform: scaleX(0);
+  transition: all 0.5s ease-in-out;
+}
+#purchaser .male_age .male .male10 {
+  width: 0.7%;
+}
+#purchaser .male_age .male .male20 {
+  width: 5.4%;
+}
+#purchaser .male_age .male .male30 {
+  width: 5.2%;
+}
+#purchaser .male_age .male .male40 {
+  width: 2.9%;
+}
+#purchaser .male_age .male .male50 {
+  width: 1.4%;
+}
+#purchaser .male_age .male .male60 {
+  width: 0.2%;
+}
+
+#ratings {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#ratings h3 {
+  font-family: "GongGothicLight";
+  text-align: center;
+  font-size: 2.5vw;
+  color: #fff;
+  margin-top: 2%;
+}
+#ratings .avgStar {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5% 0 0;
+}
+#ratings .avgStar .stars {
+  width: 28%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#ratings .avgStar .stars img {
+  width: 2vw;
+  margin: 0 0.3vw 0.3vw 0;
+}
+#ratings .avgStar span {
+  font-family: "GongGothicLight";
+  font-size: 2vw;
+  color: #f5ac1b;
+}
+#ratings .graph_box {
+  width: 100%;
+  height: 70%;
+}
+#ratings .graph_box .ratings {
+  width: 100%;
+  height: 18.1818181818%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#ratings .graph_box .ratings .star {
+  width: 9vw;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-left: 8vw;
+}
+#ratings .graph_box .ratings .star img {
+  width: 1.5vw;
+}
+#ratings .graph_box .ratings .background {
+  width: 15vw;
+  height: 35%;
+  background-color: #fff;
+  position: relative;
+  margin: 0 1.5vw;
+}
+#ratings .graph_box .ratings .background .graphs {
+  height: 100%;
+  background-color: #f5ac1b;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 0 100%;
+  transform: scaleX(0);
+  transition: all 0.5s ease-in-out;
+}
+#ratings .graph_box .ratings .background .star5 {
+  width: 80%;
+}
+#ratings .graph_box .ratings .background .star4 {
+  width: 0%;
+}
+#ratings .graph_box .ratings .background .star3 {
+  width: 20%;
+}
+#ratings .graph_box .ratings .background .star2 {
+  width: 0%;
+}
+#ratings .graph_box .ratings .background .star1 {
+  width: 0%;
+}
+#ratings .graph_box .ratings span {
+  font-family: "OSeongandHanEum";
+  font-size: 1vw;
+  color: #fff;
+}
+
+#comments {
+  width: 100%;
+  height: 50vw;
+  margin-top: 5%;
+}
+#comments #comments_box {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  border: 0.05vw solid blue;
+}
+#comments #comments_box h3 {
+  font-family: "GongGothicLight";
+  font-size: 2.5vw;
+}
+
+#comment_input {
+  width: 100%;
+  height: 10vw;
+  border: 0.05vw solid red;
+}
+#comment_input .review {
+  width: 74%;
+  height: 30%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#comment_input .review img {
+  width: 2vw;
+  cursor: pointer;
+}
+#comment_input .review span {
+  font-family: "OSeongandHanEum";
+  font-weight: bold;
+  font-size: 1vw;
+}
+#comment_input .review span i {
+  border: 0.05vw solid #201e1f;
+  padding: 0.15vw 0.25vw;
+  cursor: pointer;
+}
+#comment_input .reviewInput {
+  width: 80%;
+  height: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#comment_input .reviewInput textarea {
+  width: 80%;
+  height: 80%;
+  border: 0.15vw solid #201e1f;
+  margin-right: 0.2%;
+  font-family: "OSeongandHanEum";
+  font-size: 1vw;
+  padding: 0.5vw;
+}
+#comment_input .reviewInput textarea:focus {
+  outline: none;
+}
+#comment_input .reviewInput input[type=submit] {
+  width: 12%;
+  height: 80%;
+  font-family: "OSeongandHanEum";
+  font-size: 1vw;
+  background-color: #201e1f;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  margin-left: 0.2%;
+  cursor: pointer;
 }

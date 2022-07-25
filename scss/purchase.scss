@@ -260,6 +260,7 @@ $titleFont: 'GongGothicLight';
             font-weight: bold;
             padding: 0.2vw 0.6vw;
             background-color: $fontColor;
+            border: none;
             color: #fff;
             border-radius: 4vw;
             cursor: pointer;
@@ -472,14 +473,15 @@ $titleFont: 'GongGothicLight';
 
 #bookInfo_box{
     width: 100%; height: 410vw;
-    border-left: 0.15vw solid $fontColor;
-    border-right: 0.15vw solid $fontColor;
     position: relative;
     
     .bookInfo{
         width: 100%; height: auto;
         background-color: #fff;
         position: absolute;
+        border-left: 0.15vw solid $fontColor;
+        border-right: 0.15vw solid $fontColor;
+        border-bottom: 0.15vw solid $fontColor;
 
         h3{
             font-family: $titleFont;
@@ -651,3 +653,358 @@ $titleFont: 'GongGothicLight';
 }
 
 
+
+//구매자 & 평점 분포
+#distribution{
+    width: 100%; height: 30vw;
+    background-color: $fontColor;
+    margin-top: 5%;
+
+    #distribution_box{
+        width: 90%; height: 100%;
+        margin: 0 auto;
+        display: flex;
+    }
+}
+
+#purchaser{
+    width: 50%; height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    
+    h3{
+        font-family: $titleFont;
+        text-align: center;
+        font-size: 2.5vw;
+        color: #fff;
+        margin-top: 0.5vw;
+    }
+
+    #buyers{
+        width: 100%; height: 85%;
+        display: flex;
+    }
+
+    .female_age{
+        width: 45%; height: 100%;
+
+        .female{
+            width: 100%; height: calc(100% / 6);
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            span{
+                font-family: $mainFont;
+                font-size: 0.8vw;
+                color: #fff;
+                margin-right: 0.8vw;
+            }
+
+            .background{
+                width: 65%; height: 35%;
+                background-color: #fff;
+                position: relative;
+            }
+
+            .graph{
+                height: 100%;
+                position: absolute;
+                top: 0; right: 0;
+                background-color: $pink;
+                transform-origin: 100% 0;
+                transform: scaleX(0);
+                transition: all 0.5s ease-in-out;
+            }
+
+            .fe10{
+                width: 3.4%;
+            }
+
+            .fe20{
+                width: 33%;
+            }
+
+            .fe30{
+                width: 24.2%;
+            }
+
+            .fe40{
+                width: 14.6%;
+            }
+
+            .fe50{
+                width: 8.4%;
+            }
+
+            .fe60{
+                width: 0.5%;
+            }
+        }
+    }
+
+    .age{
+        width: 10%; height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        span{
+            font-family: $mainFont;
+            font-size: 1.2vw;
+            color: #fff;
+        }
+    }
+
+    .male_age{
+        width: 45%; height: 100%;
+
+        .male{
+            width: 100%; height: calc(100% / 6);
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            span{
+                font-family: $mainFont;
+                font-size: 0.8vw;
+                color: #fff;
+                margin-left: 0.8vw;
+            }
+
+            .background{
+                width: 65%; height: 35%;
+                background-color: #fff;
+                position: relative;
+            }
+
+            .graph{
+                height: 100%;
+                position: absolute;
+                top: 0; left: 0;
+                background-color: $blue;
+                transform-origin: 0 100%;
+                transform: scaleX(0);
+                transition: all 0.5s ease-in-out;
+            }
+
+            .male10{
+                width: 0.7%;
+            }
+
+            .male20{
+                width: 5.4%;
+            }
+
+            .male30{
+                width: 5.2%;
+            }
+
+            .male40{
+                width: 2.9%;
+            }
+
+            .male50{
+                width: 1.4%;
+            }
+
+            .male60{
+                width: 0.2%;
+            }
+        }
+    }
+}
+
+#ratings{
+    width: 50%; height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    
+    h3{
+        font-family: $titleFont;
+        text-align: center;
+        font-size: 2.5vw;
+        color: #fff;
+        margin-top: 2%;
+    }
+
+    .avgStar{
+        width: 100%; height: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 5% 0 0;
+
+        .stars{
+            width: 28%; height: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            img{
+                width: 2vw;
+                margin: 0 0.3vw 0.3vw 0;
+            }
+        }
+
+        span{
+            font-family: $titleFont;
+            font-size: 2vw;
+            color: $yellow;
+        }
+    }
+
+    .graph_box{
+        width: 100%; height: 70%;
+
+        .ratings{
+            width: 100%; height: calc(100% / 5.5);
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            .star{
+                width: 9vw; height: 100%;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                margin-left: 8vw;
+                
+                img{
+                    width: 1.5vw;
+                }
+            }
+
+            .background{
+                width: 15vw; height: 35%;
+                background-color: #fff;
+                position: relative;
+                margin: 0 1.5vw;
+
+                .graphs{
+                    height: 100%;
+                    background-color: $yellow;
+                    position: absolute;
+                    top: 0; left: 0;
+                    transform-origin: 0 100%;
+                    transform: scaleX(0);
+                    transition: all 0.5s ease-in-out;
+                }
+
+                .star5{
+                    width: 80%;
+
+                }
+
+                .star4{
+                    width: 0%;
+                }
+
+                .star3{
+                    width: 20%;
+                }
+
+                .star2{
+                    width: 0%;
+                }
+                
+                .star1{
+                    width: 0%;
+                }
+            }
+
+            span{
+                font-family: $mainFont;
+                font-size: 1vw;
+                color: #fff;
+            }
+        }
+    }
+}
+
+
+
+// 댓글
+#comments{
+    width: 100%; height: 50vw;
+    margin-top: 5%;
+
+    #comments_box{
+        width: 90%; height: 100%;
+        margin: 0 auto;
+        border: 0.05vw solid blue;
+
+        h3{
+            font-family: $titleFont;
+            font-size: 2.5vw;
+        }
+    }
+}
+
+#comment_input{
+    width: 100%; height: 10vw;
+    border: 0.05vw solid red;
+
+    .review{
+        width: 74%; height: 30%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        img{
+            width: 2vw;
+            cursor: pointer;
+        }
+
+        span{
+            font-family: $mainFont;
+            font-weight: bold;
+            font-size: 1vw;
+
+            i{
+                border: 0.05vw solid $fontColor;
+                padding: 0.15vw 0.25vw; 
+                cursor: pointer;
+            }
+        }
+    }
+
+    .reviewInput{
+        width: 80%; height: 70%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        textarea{
+            width: 80%; height: 80%;
+            border: 0.15vw solid $fontColor;
+            margin-right: 0.2%;
+            font-family: $mainFont;
+            font-size: 1vw;
+            padding: 0.5vw;
+        }
+
+        textarea:focus{
+            outline: none;
+        }
+
+        input[type="submit"]{
+            width: 12%; height: 80%;
+            font-family: $mainFont;
+            font-size: 1vw;
+            background-color: $fontColor;
+            color: #fff;
+            border: none;
+            border-radius: 0;
+            margin-left: 0.2%;
+            cursor: pointer;
+        }
+    }
+}

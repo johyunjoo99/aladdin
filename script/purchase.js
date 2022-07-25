@@ -83,5 +83,40 @@ $(function(){
     });
 
 
+    //구매자 & 평점 분포 그래프
+    $(window).scroll(function(){
+
+        var ws = $(this).scrollTop();
+
+        var distribution = $("#distribution").offset().top;
+
+        if(ws > distribution - 500){
+            $(".graph, .graphs").css("transform", "scaleX(1)")
+        }
+
+    });
+
+
+    //댓글 별 선택
+    $(".reviewStar img").click(function(){ 
+        $(this).attr("src", "img/purchase_img/star.svg");
+        $(this).prevAll().attr("src", "img/purchase_img/star.svg");
+        $(this).nextAll().attr("src", "img/purchase_img/star_blank.svg");
+    })
+
+    // $(".reviewStar img").bind({
+
+    //     mouseenter: function(){
+    //         $(this).attr("src", "img/purchase_img/star.svg");
+    //         $(this).prevAll().attr("src", "img/purchase_img/star.svg");
+    //     },
+
+    //     mouseleave: function(){
+    //         $(this).attr("src", "img/purchase_img/star_blank.svg");
+    //         $(this).prevAll().attr("src", "img/purchase_img/star_blank.svg");
+    //     }
+
+    // })
+
 
 })
