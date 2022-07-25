@@ -1,12 +1,19 @@
 $(function(){
 
+    //세일즈 포인트 소개
+    $("#score .fa-chevron-down").click(function(){
+        $("#score .textbox").toggle();
+    });
+
+
+    //구매 완료
     $("header").css("display", "block");
 
     $("#btn_zip button").click(function(){
         alert("선택하신 제품이 장바구니에 담겼습니다.");  
     })
 
-    $("input[type='submit']").click(function(){
+    $("#btn_zip input").click(function(){
 
         alert("구매가 완료되었습니다.");
 
@@ -83,6 +90,7 @@ $(function(){
     });
 
 
+
     //구매자 & 평점 분포 그래프
     $(window).scroll(function(){
 
@@ -97,26 +105,58 @@ $(function(){
     });
 
 
+
+    //글 작성 유의사항
+    $(".review .fa-chevron-down").click(function(){
+        $(".review .textbox").toggle();
+    });
+
+
+
     //댓글 별 선택
-    $(".reviewStar img").click(function(){ 
+    $(".blank img").click(function(){
         $(this).attr("src", "img/purchase_img/star.svg");
         $(this).prevAll().attr("src", "img/purchase_img/star.svg");
         $(this).nextAll().attr("src", "img/purchase_img/star_blank.svg");
     })
 
-    // $(".reviewStar img").bind({
+    $(".blank img").hover(function(){
 
-    //     mouseenter: function(){
-    //         $(this).attr("src", "img/purchase_img/star.svg");
-    //         $(this).prevAll().attr("src", "img/purchase_img/star.svg");
-    //     },
+        var starIndex = $(this).index();
 
-    //     mouseleave: function(){
-    //         $(this).attr("src", "img/purchase_img/star_blank.svg");
-    //         $(this).prevAll().attr("src", "img/purchase_img/star_blank.svg");
-    //     }
+        $(".fill img").eq(starIndex).css("opacity", 1);
+        $(".fill img").eq(starIndex).prevAll().css("opacity", 1);
+        $(".fill img").eq(starIndex).nextAll().css("opacity", 0);
 
-    // })
+    }, function(){
+        var starIndex = $(this).index();
 
+        $(".fill img").eq(starIndex).css("opacity", 0);
+        $(".fill img").eq(starIndex).prevAll().css("opacity", 0);
+        $(".fill img").eq(starIndex).nextAll().css("opacity", 0);
+    });
+
+
+
+    //댓글 좋아요
+    var count = 0
+
+    $(".thumb .fa-regular").click(function(){
+        $(this).css("display", "none");
+        $(this).siblings().css("display", "block");
+
+        $(this).parents(".netizen").find(".like").text(
+            "공감(" + (count+1) + ")"
+        )
+    });
+
+    $(".thumb .fa-solid").click(function(){
+        $(this).css("display", "none");
+        $(this).siblings().css("display", "block");
+
+        $(this).parents(".netizen").find(".like").text(
+            "공감(" + (count) + ")"
+        )
+    });
 
 })

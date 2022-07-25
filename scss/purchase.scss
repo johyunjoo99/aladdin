@@ -18,7 +18,6 @@
 //mixins
 
 
-
 //vaiables
 $yellow: #f5ac1b;
 $blue: #728397;
@@ -47,8 +46,15 @@ $titleFont: 'GongGothicLight';
             font-family: $titleFont;
             font-weight: 300;
             font-size: 1vw;
-            padding: 0.6vw 0; 
+            padding: 0.6vw 1vw; 
             border-bottom: 0.15vw solid $fontColor;
+            border-radius: 0.3vw;
+            background-color: $fontColor;
+            color: #fff;
+
+            a{
+                color: #fff;
+            }
             
             a:hover{
                 text-decoration: underline;
@@ -68,7 +74,6 @@ $titleFont: 'GongGothicLight';
 
     #book_imgbox{
         width: 90%; height: 90%;
-        border: 0.15vw solid $fontColor;
         position: absolute;
         top: 50%; left: 50%;
         transform: translate(-50%, -50%);
@@ -177,20 +182,55 @@ $titleFont: 'GongGothicLight';
 
     #score{
         width: 100%; height: 3.5vw;
-        margin-top: 0.3vw;        
+        margin-top: 0.3vw; 
+        position: relative;
 
         p{
             font-family: $mainFont;
             font-size: 0.9vw;
             font-weight: bold;
             margin: 0.3vw 0;
-
+           
             span{
                 display: inline-block;
                 padding: 0.1vw 0.25vw;
                 border: 0.05vw solid $fontColor;
                 margin-left: 0.3vw;
                 cursor: pointer;
+                
+            }
+        }
+
+        .textbox{
+            width: 23vw; height: 15vw;
+            background-color: #fff;
+            border: 0.1vw solid $fontColor;
+            position: absolute;
+            top: 50%; right: 41.5%;
+            z-index: 1;
+            padding: 0 0.8vw;
+            display: none;
+
+            i{
+                position: absolute;
+                top: 4%; right: 4%;
+                font-size: 1.2vw;
+                padding: 0 0.3vw;
+                border: 0.1vw solid $fontColor;
+            }
+
+            h4{
+                font-size: 1.2vw;
+                text-align: center;
+                margin: 3% 0;
+                border-bottom: 0.1vw solid $fontColor;
+            }
+            
+            p{
+                font-family: $mainFont;
+                font-size: 0.8vw;
+                font-weight: 300;
+                margin: 4% 0 0 0;
             }
         }
 
@@ -616,7 +656,6 @@ $titleFont: 'GongGothicLight';
     table{
         width: 100%; height: 55vw;
         border: 0.15vw solid $fontColor;
-        // padding: 0.5vw;
         margin-top: 3%;
 
         tr{
@@ -931,13 +970,16 @@ $titleFont: 'GongGothicLight';
 
 // 댓글
 #comments{
-    width: 100%; height: 50vw;
+    width: 100%; height: 12.5vw;
     margin-top: 5%;
 
     #comments_box{
         width: 90%; height: 100%;
         margin: 0 auto;
-        border: 0.05vw solid blue;
+        border-bottom: 0.15vw solid $fontColor;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
 
         h3{
             font-family: $titleFont;
@@ -947,18 +989,18 @@ $titleFont: 'GongGothicLight';
 }
 
 #comment_input{
-    width: 100%; height: 10vw;
-    border: 0.05vw solid red;
+    width: 80%; height: 10vw;
 
     .review{
-        width: 74%; height: 30%;
-        margin: 0 auto;
+        width: 74%; height: 25%;
+        margin: 1% auto 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        position: relative;
 
         img{
-            width: 2vw;
+            width: 1.5vw;
             cursor: pointer;
         }
 
@@ -971,6 +1013,75 @@ $titleFont: 'GongGothicLight';
                 border: 0.05vw solid $fontColor;
                 padding: 0.15vw 0.25vw; 
                 cursor: pointer;
+            }
+        }
+
+        .reviewStar{
+            width: 20%; height: 60%;
+            position: relative;
+
+            .blank{
+                width: 100%; height: 100%;
+                position: absolute;
+                top: 0; left: 0;
+            }
+
+            .fill{
+                width: 100%; height: 100%;
+                position: absolute;
+                top: 0; left: 0;
+                z-index: -1;
+
+                img{
+                    opacity: 0;
+                }
+            }
+        }
+
+        .textbox{
+            width: 25vw; height: 24vw;
+            background-color: #fff;
+            border: 0.1vw solid $fontColor;
+            position: absolute;
+            top: 85%; right: 0%;
+            padding: 0 0.8vw;
+            display: none;
+
+            i{
+                position: absolute;
+                top: 2.5%; right: 3%;
+                font-size: 1.2vw;
+                border: 0.1vw solid $fontColor;
+                padding: 0 0.3vw;
+            }
+
+            h4{
+                font-family: $titleFont;
+                font-size: 1.2vw;
+                text-align: center;
+                padding-bottom: 3%;
+                margin: 5% 0;
+                border-bottom: 0.1vw solid $fontColor;
+            }
+
+            p{
+                font-family: $mainFont;
+                font-size: 0.8vw;
+                margin-bottom: 3%;
+                padding: 0 0.2vw;
+            }
+
+            ol{
+                margin-top: 5%;
+                padding-left: 1vw;
+            }
+
+            li{
+                list-style: decimal;
+                font-family: $mainFont;
+                font-size: 0.8vw;
+                margin-bottom: 3%;
+                padding: 0 0.2vw;
             }
         }
     }
@@ -1008,3 +1119,84 @@ $titleFont: 'GongGothicLight';
         }
     }
 }
+
+#reviews{
+    width: 100%; height: 50vw;
+    margin-top: 3%;
+
+    #reviews_box{
+        width: 80%; height: 100%;
+        margin: 0 auto;
+    }
+
+    .review{
+        width: 100%; height: auto;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 1vw 0;
+        border-bottom: 0.1vw solid $fontColor;
+
+        &:first-of-type{
+            border-top: 0.1vw solid $fontColor;
+        }
+
+        .starScore{
+            width: 13%; height: 34%;
+
+            img{
+                width: 1.5vw;
+            }
+        }
+
+        .reviewText{
+            width: 70%; height: 100%;
+            p{
+                width: 100%; height: auto;
+                font-family: $mainFont;
+                font-size: 0.9vw;
+            }
+
+            .netizen{
+                width: 100%; height: 3.6vw;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+
+                .netizenInfo{
+                    width: 20%; height: 50%;
+
+                    span{
+                        font-family: $mainFont;
+                        font-size: 0.8vw;
+                        margin-right: 3%;
+                    }
+    
+                }
+
+                .thumb{
+                    width: 6%; height: 80%;
+                    position: relative;
+
+                    .fa-thumbs-up{
+                        position: absolute;
+                        font-size: 1.5vw;
+                        background-color: $fontColor;
+                        padding: 0.7vw;
+                        color: #fff;
+                        border-radius: 6vw;
+                    }
+    
+                    .fa-regular{
+                        display: block;
+                    }
+    
+                    .fa-solid{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+

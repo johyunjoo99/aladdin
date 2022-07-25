@@ -31,8 +31,14 @@
   font-family: "GongGothicLight";
   font-weight: 300;
   font-size: 1vw;
-  padding: 0.6vw 0;
+  padding: 0.6vw 1vw;
   border-bottom: 0.15vw solid #201e1f;
+  border-radius: 0.3vw;
+  background-color: #201e1f;
+  color: #fff;
+}
+#slider #slider_box h4 a {
+  color: #fff;
 }
 #slider #slider_box h4 a:hover {
   text-decoration: underline;
@@ -51,7 +57,6 @@
 #book_img #book_imgbox {
   width: 90%;
   height: 90%;
-  border: 0.15vw solid #201e1f;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -147,6 +152,7 @@
   width: 100%;
   height: 3.5vw;
   margin-top: 0.3vw;
+  position: relative;
 }
 #book_info #score p {
   font-family: "OSeongandHanEum";
@@ -160,6 +166,38 @@
   border: 0.05vw solid #201e1f;
   margin-left: 0.3vw;
   cursor: pointer;
+}
+#book_info #score .textbox {
+  width: 23vw;
+  height: 15vw;
+  background-color: #fff;
+  border: 0.1vw solid #201e1f;
+  position: absolute;
+  top: 50%;
+  right: 41.5%;
+  z-index: 1;
+  padding: 0 0.8vw;
+  display: none;
+}
+#book_info #score .textbox i {
+  position: absolute;
+  top: 4%;
+  right: 4%;
+  font-size: 1.2vw;
+  padding: 0 0.3vw;
+  border: 0.1vw solid #201e1f;
+}
+#book_info #score .textbox h4 {
+  font-size: 1.2vw;
+  text-align: center;
+  margin: 3% 0;
+  border-bottom: 0.1vw solid #201e1f;
+}
+#book_info #score .textbox p {
+  font-family: "OSeongandHanEum";
+  font-size: 0.8vw;
+  font-weight: 300;
+  margin: 4% 0 0 0;
 }
 #book_info #score img {
   width: 1.2vw;
@@ -828,14 +866,17 @@
 
 #comments {
   width: 100%;
-  height: 50vw;
+  height: 12.5vw;
   margin-top: 5%;
 }
 #comments #comments_box {
   width: 90%;
   height: 100%;
   margin: 0 auto;
-  border: 0.05vw solid blue;
+  border-bottom: 0.15vw solid #201e1f;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
 }
 #comments #comments_box h3 {
   font-family: "GongGothicLight";
@@ -843,20 +884,20 @@
 }
 
 #comment_input {
-  width: 100%;
+  width: 80%;
   height: 10vw;
-  border: 0.05vw solid red;
 }
 #comment_input .review {
   width: 74%;
-  height: 30%;
-  margin: 0 auto;
+  height: 25%;
+  margin: 1% auto 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 #comment_input .review img {
-  width: 2vw;
+  width: 1.5vw;
   cursor: pointer;
 }
 #comment_input .review span {
@@ -868,6 +909,73 @@
   border: 0.05vw solid #201e1f;
   padding: 0.15vw 0.25vw;
   cursor: pointer;
+}
+#comment_input .review .reviewStar {
+  width: 20%;
+  height: 60%;
+  position: relative;
+}
+#comment_input .review .reviewStar .blank {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#comment_input .review .reviewStar .fill {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+#comment_input .review .reviewStar .fill img {
+  opacity: 0;
+}
+#comment_input .review .textbox {
+  width: 25vw;
+  height: 24vw;
+  background-color: #fff;
+  border: 0.1vw solid #201e1f;
+  position: absolute;
+  top: 85%;
+  right: 0%;
+  padding: 0 0.8vw;
+  display: none;
+}
+#comment_input .review .textbox i {
+  position: absolute;
+  top: 2.5%;
+  right: 3%;
+  font-size: 1.2vw;
+  border: 0.1vw solid #201e1f;
+  padding: 0 0.3vw;
+}
+#comment_input .review .textbox h4 {
+  font-family: "GongGothicLight";
+  font-size: 1.2vw;
+  text-align: center;
+  padding-bottom: 3%;
+  margin: 5% 0;
+  border-bottom: 0.1vw solid #201e1f;
+}
+#comment_input .review .textbox p {
+  font-family: "OSeongandHanEum";
+  font-size: 0.8vw;
+  margin-bottom: 3%;
+  padding: 0 0.2vw;
+}
+#comment_input .review .textbox ol {
+  margin-top: 5%;
+  padding-left: 1vw;
+}
+#comment_input .review .textbox li {
+  list-style: decimal;
+  font-family: "OSeongandHanEum";
+  font-size: 0.8vw;
+  margin-bottom: 3%;
+  padding: 0 0.2vw;
 }
 #comment_input .reviewInput {
   width: 80%;
@@ -900,4 +1008,79 @@
   border-radius: 0;
   margin-left: 0.2%;
   cursor: pointer;
+}
+
+#reviews {
+  width: 100%;
+  height: 50vw;
+  margin-top: 3%;
+}
+#reviews #reviews_box {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+}
+#reviews .review {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1vw 0;
+  border-bottom: 0.1vw solid #201e1f;
+}
+#reviews .review:first-of-type {
+  border-top: 0.1vw solid #201e1f;
+}
+#reviews .review .starScore {
+  width: 13%;
+  height: 34%;
+}
+#reviews .review .starScore img {
+  width: 1.5vw;
+}
+#reviews .review .reviewText {
+  width: 70%;
+  height: 100%;
+}
+#reviews .review .reviewText p {
+  width: 100%;
+  height: auto;
+  font-family: "OSeongandHanEum";
+  font-size: 0.9vw;
+}
+#reviews .review .reviewText .netizen {
+  width: 100%;
+  height: 3.6vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+#reviews .review .reviewText .netizen .netizenInfo {
+  width: 20%;
+  height: 50%;
+}
+#reviews .review .reviewText .netizen .netizenInfo span {
+  font-family: "OSeongandHanEum";
+  font-size: 0.8vw;
+  margin-right: 3%;
+}
+#reviews .review .reviewText .netizen .thumb {
+  width: 6%;
+  height: 80%;
+  position: relative;
+}
+#reviews .review .reviewText .netizen .thumb .fa-thumbs-up {
+  position: absolute;
+  font-size: 1.5vw;
+  background-color: #201e1f;
+  padding: 0.7vw;
+  color: #fff;
+  border-radius: 6vw;
+}
+#reviews .review .reviewText .netizen .thumb .fa-regular {
+  display: block;
+}
+#reviews .review .reviewText .netizen .thumb .fa-solid {
+  display: none;
 }
