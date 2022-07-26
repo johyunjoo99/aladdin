@@ -31,11 +31,11 @@ $(function(){
 
     //글 작성 시 유의사항
     $.get("../txt/write_notice.txt", function(data){
-        $(".review .textbox").html(data);
+        $(".review_star .textbox").html(data);
 
         // 글 작성 시 유의사항 창 닫기
-        $(".review .fa-xmark").click(function(){
-            $(".review .textbox").css("display", "none");
+        $(".review_star .fa-xmark").click(function(){
+            $(".review_star .textbox").css("display", "none");
         })
     })
 

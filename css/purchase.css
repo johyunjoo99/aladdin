@@ -27,7 +27,7 @@
   justify-content: space-between;
   border-bottom: 0.15vw solid #201e1f;
 }
-#slider #slider_box h4 {
+#slider #slider_box > h4 {
   font-family: "GongGothicLight";
   font-weight: 300;
   font-size: 1vw;
@@ -37,10 +37,10 @@
   background-color: #201e1f;
   color: #fff;
 }
-#slider #slider_box h4 a {
+#slider #slider_box > h4 a {
   color: #fff;
 }
-#slider #slider_box h4 a:hover {
+#slider #slider_box > h4 a:hover {
   text-decoration: underline;
 }
 #slider #slider_box > div {
@@ -188,6 +188,7 @@
   border: 0.1vw solid #201e1f;
 }
 #book_info #score .textbox h4 {
+  font-family: "GongGothicLight";
   font-size: 1.2vw;
   text-align: center;
   margin: 3% 0;
@@ -887,7 +888,7 @@
   width: 80%;
   height: 10vw;
 }
-#comment_input .review {
+#comment_input .review_star {
   width: 74%;
   height: 25%;
   margin: 1% auto 0;
@@ -896,33 +897,33 @@
   align-items: center;
   position: relative;
 }
-#comment_input .review img {
+#comment_input .review_star img {
   width: 1.5vw;
   cursor: pointer;
 }
-#comment_input .review span {
+#comment_input .review_star span {
   font-family: "OSeongandHanEum";
   font-weight: bold;
   font-size: 1vw;
 }
-#comment_input .review span i {
+#comment_input .review_star span i {
   border: 0.05vw solid #201e1f;
   padding: 0.15vw 0.25vw;
   cursor: pointer;
 }
-#comment_input .review .reviewStar {
+#comment_input .review_star .reviewStar {
   width: 20%;
   height: 60%;
   position: relative;
 }
-#comment_input .review .reviewStar .blank {
+#comment_input .review_star .reviewStar .blank {
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
 }
-#comment_input .review .reviewStar .fill {
+#comment_input .review_star .reviewStar .fill {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -930,10 +931,10 @@
   left: 0;
   z-index: -1;
 }
-#comment_input .review .reviewStar .fill img {
+#comment_input .review_star .reviewStar .fill img {
   opacity: 0;
 }
-#comment_input .review .textbox {
+#comment_input .review_star .textbox {
   width: 25vw;
   height: 24vw;
   background-color: #fff;
@@ -944,7 +945,7 @@
   padding: 0 0.8vw;
   display: none;
 }
-#comment_input .review .textbox i {
+#comment_input .review_star .textbox i {
   position: absolute;
   top: 2.5%;
   right: 3%;
@@ -952,7 +953,7 @@
   border: 0.1vw solid #201e1f;
   padding: 0 0.3vw;
 }
-#comment_input .review .textbox h4 {
+#comment_input .review_star .textbox h4 {
   font-family: "GongGothicLight";
   font-size: 1.2vw;
   text-align: center;
@@ -960,17 +961,17 @@
   margin: 5% 0;
   border-bottom: 0.1vw solid #201e1f;
 }
-#comment_input .review .textbox p {
+#comment_input .review_star .textbox p {
   font-family: "OSeongandHanEum";
   font-size: 0.8vw;
   margin-bottom: 3%;
   padding: 0 0.2vw;
 }
-#comment_input .review .textbox ol {
+#comment_input .review_star .textbox ol {
   margin-top: 5%;
   padding-left: 1vw;
 }
-#comment_input .review .textbox li {
+#comment_input .review_star .textbox li {
   list-style: decimal;
   font-family: "OSeongandHanEum";
   font-size: 0.8vw;
@@ -1012,7 +1013,8 @@
 
 #reviews {
   width: 100%;
-  height: 50vw;
+  height: auto;
+  padding-bottom: 3vw;
   margin-top: 3%;
 }
 #reviews #reviews_box {
