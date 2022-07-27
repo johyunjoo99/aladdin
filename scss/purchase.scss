@@ -288,7 +288,7 @@ $titleFont: 'GongGothicLight';
         justify-content: space-between;
         align-items: center;
 
-        label{
+        .number{
             width: 50%; height: 3.5vw;
             display: flex;
             justify-content: flex-start;
@@ -416,7 +416,7 @@ $titleFont: 'GongGothicLight';
 
     i{
         font-size: 3vw;
-        font-size: $fontColor;
+        color: $fontColor;
         cursor: pointer;
     }
 

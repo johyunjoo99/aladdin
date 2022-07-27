@@ -247,7 +247,7 @@
   justify-content: space-between;
   align-items: center;
 }
-#book_info #purchase_number label {
+#book_info #purchase_number .number {
   width: 50%;
   height: 3.5vw;
   display: flex;
@@ -363,7 +363,7 @@
 }
 #product_slide i {
   font-size: 3vw;
-  font-size: #201e1f;
+  color: #201e1f;
   cursor: pointer;
 }
 #product_slide #product_list {
